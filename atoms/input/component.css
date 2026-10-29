@@ -16,3 +16,5 @@
 .es-input[data-size="lg"] { block-size: var(--es-control-height-lg); }
 .es-input[data-size="xl"] { block-size: var(--es-control-height-xl); padding-inline: 16px; font-size: 18px; }
 textarea.es-input { block-size: auto; min-block-size: 96px; padding-block: 10px; resize: vertical; }
+[data-surface="primary"] .es-input { color: var(--es-field-text); }
+[data-surface="primary"] .es-input::placeholder { color: var(--es-field-placeholder); }

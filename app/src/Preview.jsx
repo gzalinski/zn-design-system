@@ -14,6 +14,7 @@ export default function Preview({ html, css = '', js = '', tokens, mode, density
 const send=()=>parent.postMessage({esFrame:'${id}',h:Math.ceil(document.body.getBoundingClientRect().height)},'*');
 new ResizeObserver(send).observe(document.body);addEventListener('load',send);
 document.addEventListener('click',e=>{if(e.target.closest('a[href="#"]'))e.preventDefault();});
+document.addEventListener('submit',e=>{if(e.target.getAttribute('action')==='#')e.preventDefault();});
 </script></body></html>`, [html, css, js, tokens, mode, density, radius, fit, scale, pad, id]);
 
   useEffect(() => {

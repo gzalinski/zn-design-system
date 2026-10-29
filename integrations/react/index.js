@@ -8,6 +8,7 @@ export { Alert } from './Alert.jsx';
 export { Card } from './Card.jsx';
 export { Dropdown } from './Dropdown.jsx';
 export { Pagination } from './Pagination.jsx';
+export { Subscribe } from './Subscribe.jsx';
 export { Cta } from './Cta.jsx';
 export { Hero } from './Hero.jsx';
 export { DefaultPage } from './DefaultPage.jsx';

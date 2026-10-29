@@ -73,6 +73,10 @@ a { color: var(--es-link); text-underline-offset: 3px; }
 /* Surface context: components inside remap automatically. */
 [data-surface="base"] { background: var(--es-base-surface); }
 [data-surface="soft"] { background: var(--es-primary-soft); }
+/* Text colours for controls that keep a light field (inputs) inside a primary surface.
+   Declared on :root so they resolve before the surface remaps --es-text-*. */
+:root { --es-field-text: var(--es-text-primary); --es-field-placeholder: var(--es-text-tertiary); }
+
 [data-surface="primary"] {
   background: var(--es-primary-bg);
   color: var(--es-primary-text-inverted);

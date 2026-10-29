@@ -1,0 +1,103 @@
+{
+  "id": "subscribe",
+  "name": "Subscribe form",
+  "level": "molecule",
+  "category": "Forms",
+  "status": "draft",
+  "description": "Newsletter sign-up: email field and submit button, with optional intro, consent checkbox and result message. Layouts: inline (default), inset (button inside the field), stacked.",
+  "useWhen": [
+    "Newsletter or updates sign-up in a footer, CTA section or sidebar",
+    "Any single-field email capture"
+  ],
+  "avoidWhen": [
+    "Forms with more than one field: use Form field + Button",
+    "Login: use a login form"
+  ],
+  "keywords": [
+    "subscribe",
+    "newsletter",
+    "email",
+    "signup",
+    "abonare"
+  ],
+  "props": {
+    "layout": {
+      "attr": "data-layout",
+      "values": [
+        "inline",
+        "inset",
+        "stacked"
+      ],
+      "default": "inline"
+    },
+    "size": {
+      "attr": "data-size",
+      "values": [
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    }
+  },
+  "parts": {
+    "es-subscribe": "The form",
+    "es-subscribe__intro": "Optional text above",
+    "es-subscribe__field": "Wraps input + button (the box in inset)",
+    "es-subscribe__consent": "Optional consent checkbox (with es-checkbox); wrap the text in a span",
+    "es-subscribe__message": "Result message, data-tone success | error, role=status"
+  },
+  "tokens": [
+    "--es-border-strong",
+    "--es-border-focus",
+    "--es-radius-control",
+    "--es-control-height-md",
+    "--es-control-height-lg"
+  ],
+  "uses": [
+    "input",
+    "button",
+    "checkbox"
+  ],
+  "snippet": "<form class=\"es-subscribe\" data-layout=\"inset\" action=\"/subscribe\" method=\"post\"><div class=\"es-subscribe__field\"><input class=\"es-input\" type=\"email\" name=\"email\" placeholder=\"Your email *\" aria-label=\"Email address\" autocomplete=\"email\" required><button class=\"es-button\" type=\"submit\">Subscribe</button></div></form>",
+  "react": {
+    "element": "form",
+    "className": "es-subscribe"
+  },
+  "examples": [
+    {
+      "id": "inline",
+      "title": "Inline",
+      "description": "Default layout: field and button side by side. Below 400px of available width they stack automatically."
+    },
+    {
+      "id": "inset",
+      "title": "Inset",
+      "description": "data-layout=\"inset\": the button sits inside the field box. Radius follows the theme; with radius round it becomes a pill."
+    },
+    {
+      "id": "consent",
+      "title": "Inset with consent",
+      "description": "A required consent checkbox under the field. Link the privacy statement."
+    },
+    {
+      "id": "stacked",
+      "title": "Stacked with intro",
+      "description": "data-layout=\"stacked\": full-width rows, for narrow columns, sidebars and footers."
+    },
+    {
+      "id": "sizes",
+      "title": "Sizes",
+      "description": "data-size=\"lg\" makes the field and button 48px (default density)."
+    },
+    {
+      "id": "surface",
+      "title": "On a coloured surface",
+      "description": "Inside data-surface=\"primary\" the default button flips to a light fill; the field stays light so it reads as an input."
+    },
+    {
+      "id": "states",
+      "title": "Success and error",
+      "description": "Show the result under the field in a role=\"status\" message. Mark the field with aria-invalid when the email is wrong."
+    }
+  ]
+}

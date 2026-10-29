@@ -1,0 +1,48 @@
+/* Subscribe form — molecule. Email field + submit button, optional intro, consent and message.
+   data-layout: inline (default, side by side) | inset (button inside the field) | stacked (full-width rows).
+   data-size: md (default) | lg. Inline switches to stacked when the form is narrower than 400px. */
+.es-subscribe { container-type: inline-size; display: flex; flex-direction: column; gap: var(--es-space-150); inline-size: 100%; max-inline-size: 560px; margin: 0; }
+.es-subscribe__intro { margin: 0 0 var(--es-space-050); font: 400 var(--es-body-lg-size)/var(--es-body-lg-leading) var(--es-font-text); }
+.es-subscribe__field { display: flex; gap: var(--es-space-100); }
+.es-subscribe__field .es-input { flex: 1; min-inline-size: 0; }
+.es-subscribe__field .es-button { flex: none; }
+
+/* inset: one box, the button sits inside it */
+.es-subscribe[data-layout="inset"] .es-subscribe__field {
+  gap: var(--es-space-050); padding: 4px;
+  background: var(--es-base-surface); border: 1px solid var(--es-border-strong);
+  border-radius: calc(var(--es-radius-control) + 4px);
+  transition: border-color var(--es-duration-fast) var(--es-ease-standard), box-shadow var(--es-duration-fast) var(--es-ease-standard);
+}
+.es-subscribe[data-layout="inset"] .es-input { border: 0; background: transparent; box-shadow: none; }
+.es-subscribe[data-layout="inset"] .es-input:focus,
+.es-subscribe[data-layout="inset"] .es-input:focus-visible { outline: none; box-shadow: none; }
+.es-subscribe[data-layout="inset"] .es-subscribe__field:focus-within { border-color: var(--es-border-focus); box-shadow: 0 0 0 1px var(--es-border-focus); }
+.es-subscribe[data-layout="inset"] .es-subscribe__field:has([aria-invalid="true"]) { border-color: var(--es-error-strong); }
+
+/* stacked: full-width rows */
+.es-subscribe[data-layout="stacked"] .es-subscribe__field { flex-direction: column; }
+.es-subscribe[data-layout="stacked"] .es-input { flex: none; }
+.es-subscribe[data-layout="stacked"] .es-button { inline-size: 100%; }
+@container (max-width: 400px) {
+  .es-subscribe:not([data-layout="inset"]) .es-subscribe__field { flex-direction: column; }
+  .es-subscribe:not([data-layout="inset"]) .es-input { flex: none; }
+  .es-subscribe:not([data-layout="inset"]) .es-button { inline-size: 100%; }
+}
+
+/* size */
+.es-subscribe[data-size="lg"] .es-input,
+.es-subscribe[data-size="lg"] .es-button { block-size: var(--es-control-height-lg); }
+.es-subscribe[data-size="lg"] .es-input { padding-inline: 20px; }
+.es-subscribe[data-size="lg"] .es-button { padding-inline: 24px; }
+
+/* consent and message */
+.es-subscribe__consent { align-items: flex-start; font-size: var(--es-body-sm-size); color: var(--es-text-secondary); }
+.es-subscribe__consent input { margin-block-start: 1px; }
+.es-subscribe__consent a { color: var(--es-link); }
+.es-subscribe__message { display: flex; align-items: center; gap: var(--es-space-075); margin: 0; font: 500 var(--es-body-sm-size)/var(--es-body-sm-leading) var(--es-font-text); }
+.es-subscribe__message svg { inline-size: 16px; block-size: 16px; flex: none; }
+.es-subscribe__message[data-tone="success"] { color: var(--es-success-text); }
+.es-subscribe__message[data-tone="error"] { color: var(--es-error-text); }
+[data-surface="primary"] .es-subscribe__consent,
+[data-surface="primary"] .es-subscribe__message { color: inherit; }
