@@ -20,8 +20,8 @@
 .es-button[data-tone="warning"] { --t-bg: var(--es-warning-bg); --t-bgh: var(--es-warning-bg-hover); --t-bga: var(--es-warning-bg-active); --t-text: var(--es-warning-text); --t-inv: var(--es-warning-text-inverted); --t-soft: var(--es-warning-soft); --t-surface: var(--es-warning-surface); --t-border: var(--es-warning-border); --t-strong: var(--es-warning-strong); }
 .es-button[data-tone="error"] { --t-bg: var(--es-error-bg); --t-bgh: var(--es-error-bg-hover); --t-bga: var(--es-error-bg-active); --t-text: var(--es-error-text); --t-inv: var(--es-error-text-inverted); --t-soft: var(--es-error-soft); --t-surface: var(--es-error-surface); --t-border: var(--es-error-border); --t-strong: var(--es-error-strong); }
 .es-button[data-tone="neutral"] { --t-bg: var(--es-neutral-bg); --t-bgh: var(--es-neutral-bg-hover); --t-bga: var(--es-neutral-bg-active); --t-text: var(--es-neutral-text); --t-inv: var(--es-neutral-text-inverted); --t-soft: var(--es-neutral-soft); --t-surface: var(--es-neutral-surface); --t-border: var(--es-neutral-border); --t-strong: var(--es-neutral-strong); }
-.es-button[data-style="soft"] { background: var(--t-soft); color: var(--t-text); }
-.es-button[data-style="soft"]:hover, .es-button[data-style="soft"]:active { background: var(--t-surface); }
+.es-button[data-style="soft"] { background: var(--t-surface); color: var(--t-text); }
+.es-button[data-style="soft"]:hover, .es-button[data-style="soft"]:active { background: var(--t-border); }
 .es-button[data-style="outline"] { background: var(--es-base-surface); color: var(--t-text); border-color: var(--t-strong); }
 .es-button[data-style="outline"]:hover { background: var(--es-base-surface-hover); }
 .es-button[data-style="ghost"] { background: transparent; color: var(--t-text); }
@@ -50,6 +50,8 @@
 
 /* Split: label + icon part separated by a line (data-split="line") or a darker block (data-split="fill"). */
 .es-button[data-split] { --_divider: color-mix(in srgb, currentColor 35%, transparent); gap: 0; padding-inline: 0; overflow: hidden; }
+.es-button[data-split][data-style="soft"] { --_divider: var(--es-base-surface); }
+.es-button[data-split][data-style="ghost"] { --_divider: var(--t-border); }
 .es-button[data-split][data-style="outline"] { --_divider: var(--t-strong); }
 .es-button__label { padding-inline: 20px; }
 .es-button__part { align-self: stretch; display: inline-grid; place-items: center; min-inline-size: var(--es-control-height-md); padding-inline: 12px; }
@@ -60,9 +62,9 @@
 .es-button[data-split="line"] .es-button__part:last-child { border-inline-start: 1px solid var(--_divider); }
 .es-button[data-split="line"] .es-button__part:first-child { border-inline-end: 1px solid var(--_divider); }
 .es-button[data-split="fill"] .es-button__part { background: var(--t-bga); }
-.es-button[data-split="fill"][data-style="soft"] .es-button__part,
 .es-button[data-split="fill"][data-style="outline"] .es-button__part,
 .es-button[data-split="fill"][data-style="ghost"] .es-button__part { background: var(--t-surface); }
+.es-button[data-split="fill"][data-style="soft"] .es-button__part { background: var(--t-border); }
 /* On a primary surface the default button flips: light fill, primary text. */
 [data-surface="primary"] .es-button:not([data-tone]):not([data-style]) { --t-bg: var(--es-primary-text-inverted); --t-bgh: var(--es-primary-soft); --t-bga: var(--es-primary-surface); --t-inv: var(--es-primary-bg); }
 @media (pointer: coarse) {
