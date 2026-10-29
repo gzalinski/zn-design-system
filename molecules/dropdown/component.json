@@ -1,0 +1,149 @@
+{
+  "id": "dropdown",
+  "name": "Dropdown",
+  "level": "molecule",
+  "category": "Navigation",
+  "status": "draft",
+  "description": "A button that shows a menu or any content. Three methods: details/summary (click, native), popover + anchor positioning (top layer), CSS focus (div tabindex). Placement with data-side and data-align.",
+  "useWhen": [
+    "A short list of actions or links behind one button (account menu, sort, more actions)",
+    "Compact filters or settings that do not need a full page"
+  ],
+  "avoidWhen": [
+    "Choosing one value in a form: use Select",
+    "More than ~10 items or search inside: use a combobox",
+    "Critical content that must stay visible"
+  ],
+  "keywords": [
+    "dropdown",
+    "menu",
+    "popover",
+    "details",
+    "summary",
+    "anchor",
+    "meniu"
+  ],
+  "props": {
+    "side": {
+      "attr": "data-side",
+      "values": [
+        "bottom",
+        "top",
+        "left",
+        "right"
+      ],
+      "default": "bottom"
+    },
+    "align": {
+      "attr": "data-align",
+      "values": [
+        "start",
+        "center",
+        "end"
+      ],
+      "default": "start"
+    },
+    "hover": {
+      "attr": "data-hover",
+      "type": "boolean",
+      "default": false
+    },
+    "open": {
+      "attr": "data-open",
+      "type": "boolean",
+      "default": false
+    },
+    "close": {
+      "attr": "data-close",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "parts": {
+    "es-dropdown": "Container (details or div)",
+    "es-dropdown__content": "Content part (ul or div; add popover for method 2)",
+    "es-dropdown__item": "Menu item (a or button)",
+    "es-dropdown__label": "Group label",
+    "es-dropdown__divider": "Separator (hr)"
+  },
+  "tokens": [
+    "--es-base-elevated",
+    "--es-radius-dropdown",
+    "--es-elevation-raised-md",
+    "--es-z-dropdown",
+    "--es-border-subtle"
+  ],
+  "uses": [
+    "button"
+  ],
+  "snippet": "<details class=\"es-dropdown\"><summary class=\"es-button\">Open</summary><ul class=\"es-dropdown__content\"><li><a class=\"es-dropdown__item\" href=\"/\">Item</a></li></ul></details>",
+  "react": {
+    "element": "div",
+    "className": "es-dropdown"
+  },
+  "examples": [
+    {
+      "id": "details",
+      "title": "Method 1 · details and summary",
+      "description": "Native HTML: the summary toggles the content on click. Open or close from JS by adding or removing the open attribute. Closes only when the summary is clicked again.",
+      "minHeight": 230
+    },
+    {
+      "id": "popover",
+      "title": "Method 2 · popover and anchor positioning",
+      "description": "The content opens on the top layer, so there is no z-index or overflow issue. popovertarget points to the content id; anchor-name / position-anchor tie the content to its button. Use a unique id and anchor name per dropdown. Closes on outside click and Esc.",
+      "minHeight": 230
+    },
+    {
+      "id": "focus",
+      "title": "Method 3 · CSS focus",
+      "description": "Opens while the button has focus, closes when focus leaves. The button is a div with tabindex=\"0\" and role=\"button\" because Safari does not focus button elements on click. Do not put elements that take focus away (such as a dialog) inside.",
+      "minHeight": 230
+    },
+    {
+      "id": "close-on-click",
+      "title": "Close after click",
+      "description": "With the focus method, blur the active element when an item is chosen.",
+      "minHeight": 230
+    },
+    {
+      "id": "menu",
+      "title": "Menu with icons, label and divider",
+      "description": "Content can hold a label, icon items, keyboard hints, a divider and a destructive item (data-tone=\"error\").",
+      "minHeight": 320
+    },
+    {
+      "id": "align",
+      "title": "Align: start, center, end",
+      "description": "data-align aligns the content to the start (default), center or end of the button. Shown forced open with data-open.",
+      "minHeight": 230,
+      "gap": 200
+    },
+    {
+      "id": "side-vertical",
+      "title": "Side: top and bottom",
+      "description": "data-side=\"top\" opens above the button, bottom (default) below. Shown forced open with data-open.",
+      "minHeight": 260,
+      "gap": 240
+    },
+    {
+      "id": "side-horizontal",
+      "title": "Side: left and right",
+      "description": "data-side=\"left\" or \"right\" opens beside the button, aligned to its top (data-align moves it to center or end).",
+      "minHeight": 120,
+      "gap": 32
+    },
+    {
+      "id": "hover",
+      "title": "Hover",
+      "description": "data-hover also opens the dropdown on pointer hover. Keep it clickable too: touch screens have no hover.",
+      "minHeight": 230
+    },
+    {
+      "id": "card",
+      "title": "Any content",
+      "description": "The content can hold anything, not only a menu. data-padded adds inner padding.",
+      "minHeight": 300
+    }
+  ]
+}

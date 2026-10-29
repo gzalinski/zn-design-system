@@ -67,13 +67,13 @@ for (const [dir, level] of LEVELS) {
       const file = `${dir}/${id}/examples/${e.id}.html`;
       if (!e.id || !e.title) errors.push(`${where}: every example needs id and title`);
       else if (!fs.existsSync(path.join(root, file))) errors.push(`${where}: example file ${file} is missing`);
-      return { id: e.id, title: e.title, description: e.description || '', file };
+      return { id: e.id, title: e.title, description: e.description || '', file, ...(e.minHeight ? { minHeight: e.minHeight } : {}), ...(e.gap ? { gap: e.gap } : {}) };
     });
     components.push({
       id, name: meta.name, level, category: meta.category, status: meta.status,
       description: meta.description, useWhen: meta.useWhen || [], avoidWhen: meta.avoidWhen || [],
       keywords: meta.keywords || [], props: meta.props || {}, tokens: meta.tokens || [], uses: meta.uses || [],
-      snippet: meta.snippet || '', examples,
+      snippet: meta.snippet || '', parts: meta.parts || {}, examples,
       react: { component: componentName(id), element: meta.react?.element || 'div', className: meta.react?.className || 'es-' + id, defaults: meta.react?.defaults || {} },
       files: { html: `${dir}/${id}/component.html`, css: `${dir}/${id}/component.css`, ...(hasJs ? { js: `${dir}/${id}/component.js` } : {}), react: `integrations/react/${componentName(id)}.jsx` }
     });

@@ -257,7 +257,7 @@ function Example({ e, c, ctx, width }) {
         {['preview', 'html', 'jsx'].map((v) => <button key={v} role="tab" type="button" aria-selected={view === v} onClick={() => setView(v)}>{v === 'preview' ? 'Preview' : v.toUpperCase()}</button>)}
       </div>
       <div className="ex-box">
-        {view === 'preview' && <div className="ex-stage"><Preview html={`<div class="ex-row">${html}</div>`} css={allCss() + '.ex-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}'} {...ctx} width={width || '100%'} pad={40} title={e.title} /></div>}
+        {view === 'preview' && <div className="ex-stage"><Preview html={`<div class="ex-row">${html}</div>`} css={allCss() + `.ex-row{display:flex;flex-wrap:wrap;gap:${e.gap || 8}px;align-items:${e.minHeight ? 'flex-start' : 'center'};justify-content:center;${e.minHeight ? `min-height:${e.minHeight}px;` : ''}}${e.id.startsWith('side') ? '.ex-row{align-items:center}' : ''}`} {...ctx} width={width || '100%'} pad={40} title={e.title} /></div>}
         {view === 'html' && <Code text={html} />}
         {view === 'jsx' && <Code text={htmlToJsx(html, COMPONENTS)} />}
       </div>

@@ -1,0 +1,86 @@
+/* Dropdown — molecule. Three ways to open it:
+   1. <details class="es-dropdown"> + <summary>       (click, native, no JS)
+   2. popover + anchor positioning                    (top layer, no z-index or overflow issues)
+   3. <div class="es-dropdown"> + tabindex button     (opens on focus, closes on blur)
+   Placement: data-side="bottom|top|left|right" (default bottom), data-align="start|center|end" (default start).
+   Modifiers: data-hover (opens on hover too), data-open (force open), data-close (force closed). */
+
+.es-dropdown { position: relative; display: inline-block; }
+.es-dropdown > summary { list-style: none; }
+.es-dropdown > summary::-webkit-details-marker { display: none; }
+
+.es-dropdown__content {
+  --_gap: 4px;
+  position: absolute; z-index: var(--es-z-dropdown);
+  inset-block-start: calc(100% + var(--_gap)); inset-inline-start: 0;
+  min-inline-size: 208px; max-inline-size: min(320px, calc(100vw - 32px));
+  margin: 0; padding: 4px; list-style: none;
+  background: var(--es-base-elevated); color: var(--es-text-primary);
+  border: 1px solid var(--es-border-subtle); border-radius: var(--es-radius-dropdown);
+  box-shadow: var(--es-elevation-raised-md);
+  font: 400 var(--es-body-sm-size)/var(--es-body-sm-leading) var(--es-font-text);
+  visibility: hidden; opacity: 0; transform: scale(0.98);
+  transition: opacity var(--es-duration-fast) var(--es-ease-exit), transform var(--es-duration-fast) var(--es-ease-exit), visibility 0s linear var(--es-duration-fast);
+}
+@media (prefers-reduced-motion: reduce) { .es-dropdown__content { transition: none; } }
+
+/* Open states */
+details.es-dropdown[open] > .es-dropdown__content,
+.es-dropdown:not(details):focus-within > .es-dropdown__content,
+.es-dropdown[data-hover]:hover > .es-dropdown__content,
+.es-dropdown[data-open] > .es-dropdown__content {
+  visibility: visible; opacity: 1; transform: none;
+  transition: opacity var(--es-duration-fast) var(--es-ease-enter), transform var(--es-duration-fast) var(--es-ease-enter), visibility 0s;
+}
+.es-dropdown[data-close] > .es-dropdown__content { visibility: hidden; opacity: 0; }
+/* Hover: bridge the gap so the pointer can move from button to content. */
+.es-dropdown[data-hover] > .es-dropdown__content::before { content: ""; position: absolute; inset: calc(var(--_gap) * -2); z-index: -1; }
+
+/* Align (top / bottom) */
+.es-dropdown[data-align="center"] > .es-dropdown__content { inset-inline-start: 50%; translate: -50% 0; }
+.es-dropdown[data-align="end"] > .es-dropdown__content { inset-inline-start: auto; inset-inline-end: 0; }
+/* Side */
+.es-dropdown[data-side="top"] > .es-dropdown__content { inset-block-start: auto; inset-block-end: calc(100% + var(--_gap)); }
+.es-dropdown[data-side="left"] > .es-dropdown__content,
+.es-dropdown[data-side="right"] > .es-dropdown__content { inset-block-start: 0; translate: none; }
+.es-dropdown[data-side="left"] > .es-dropdown__content { inset-inline-start: auto; inset-inline-end: calc(100% + var(--_gap)); }
+.es-dropdown[data-side="right"] > .es-dropdown__content { inset-inline-start: calc(100% + var(--_gap)); inset-inline-end: auto; }
+.es-dropdown[data-side="left"][data-align="center"] > .es-dropdown__content,
+.es-dropdown[data-side="right"][data-align="center"] > .es-dropdown__content { inset-block-start: 50%; translate: 0 -50%; }
+.es-dropdown[data-side="left"][data-align="end"] > .es-dropdown__content,
+.es-dropdown[data-side="right"][data-align="end"] > .es-dropdown__content { inset-block-start: auto; inset-block-end: 0; }
+
+/* Method 2: popover + anchor positioning. Placement attributes go on the content itself. */
+.es-dropdown__content[popover] {
+  position: fixed; inset: auto; margin: 0;
+  position-area: block-end span-inline-end; margin-block-start: var(--_gap);
+  position-try-fallbacks: flip-block, flip-inline;
+}
+.es-dropdown__content[popover]:popover-open { visibility: visible; opacity: 1; transform: none; }
+.es-dropdown__content[popover][data-align="center"] { position-area: block-end; }
+.es-dropdown__content[popover][data-align="end"] { position-area: block-end span-inline-start; }
+.es-dropdown__content[popover][data-side="top"] { position-area: block-start span-inline-end; margin: 0 0 var(--_gap); }
+.es-dropdown__content[popover][data-side="top"][data-align="center"] { position-area: block-start; }
+.es-dropdown__content[popover][data-side="top"][data-align="end"] { position-area: block-start span-inline-start; }
+.es-dropdown__content[popover][data-side="left"] { position-area: inline-start span-block-end; margin: 0 var(--_gap) 0 0; }
+.es-dropdown__content[popover][data-side="right"] { position-area: inline-end span-block-end; margin: 0 0 0 var(--_gap); }
+/* Browsers without anchor positioning show the popover centred in the viewport (still usable). */
+
+/* Menu parts */
+.es-dropdown__item {
+  display: flex; align-items: center; gap: var(--es-space-100); inline-size: 100%;
+  min-block-size: var(--es-control-height-md); padding: 0 12px;
+  border: 0; border-radius: min(var(--es-radius-control), 8px); background: none;
+  color: inherit; font: inherit; text-align: start; text-decoration: none; cursor: pointer;
+}
+.es-dropdown__item:hover, .es-dropdown__item:focus-visible { background: var(--es-base-surface-hover); outline: none; }
+.es-dropdown__item:focus-visible { box-shadow: inset 0 0 0 2px var(--es-focus-ring-color); }
+.es-dropdown__item[aria-current="true"], .es-dropdown__item[aria-checked="true"] { color: var(--es-primary-text); font-weight: 600; }
+.es-dropdown__item[data-tone="error"] { color: var(--es-error-text); }
+.es-dropdown__item svg { inline-size: 16px; block-size: 16px; flex: none; color: var(--es-text-tertiary); }
+.es-dropdown__item[data-tone="error"] svg { color: currentColor; }
+.es-dropdown__item kbd { margin-inline-start: auto; color: var(--es-text-tertiary); font: 12px var(--es-font-mono); }
+.es-dropdown__label { margin: 0; padding: 8px 12px 4px; color: var(--es-text-tertiary); font: 600 12px/1.3 var(--es-font-text); letter-spacing: .04em; text-transform: uppercase; }
+.es-dropdown__divider { block-size: 1px; margin: 4px -4px; background: var(--es-border-subtle); border: 0; }
+.es-dropdown__content[data-padded] { padding: var(--es-space-200); }
+@media (pointer: coarse) { .es-dropdown__item { min-block-size: 44px; } }

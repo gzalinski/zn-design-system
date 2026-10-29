@@ -6,6 +6,7 @@ export { Chip } from './Chip.jsx';
 export { Input } from './Input.jsx';
 export { Alert } from './Alert.jsx';
 export { Card } from './Card.jsx';
+export { Dropdown } from './Dropdown.jsx';
 export { Pagination } from './Pagination.jsx';
 export { Cta } from './Cta.jsx';
 export { Hero } from './Hero.jsx';
