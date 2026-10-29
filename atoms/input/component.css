@@ -14,4 +14,5 @@
 .es-input:disabled { background: var(--es-disabled-bg); color: var(--es-disabled-text); border-color: var(--es-disabled-border); cursor: not-allowed; }
 .es-input[data-size="sm"] { block-size: var(--es-control-height-sm); font-size: 14px; }
 .es-input[data-size="lg"] { block-size: var(--es-control-height-lg); }
+.es-input[data-size="xl"] { block-size: var(--es-control-height-xl); padding-inline: 16px; font-size: 18px; }
 textarea.es-input { block-size: auto; min-block-size: 96px; padding-block: 10px; resize: vertical; }

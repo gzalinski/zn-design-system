@@ -107,6 +107,7 @@
   --es-control-height-sm: 32px;
   --es-control-height-md: 40px;
   --es-control-height-lg: 48px;
+  --es-control-height-xl: 56px;
   --es-radius-control: 8px;
   --es-radius-check: 4px;
   --es-radius-badge: 4px;
@@ -486,6 +487,7 @@
   --es-control-height-sm: 28px;
   --es-control-height-md: 36px;
   --es-control-height-lg: 44px;
+  --es-control-height-xl: 52px;
 }
 
 [data-es-density="default"] {
@@ -493,6 +495,7 @@
   --es-control-height-sm: 32px;
   --es-control-height-md: 40px;
   --es-control-height-lg: 48px;
+  --es-control-height-xl: 56px;
 }
 
 [data-es-density="comfortable"] {
@@ -500,6 +503,7 @@
   --es-control-height-sm: 36px;
   --es-control-height-md: 44px;
   --es-control-height-lg: 52px;
+  --es-control-height-xl: 60px;
 }
 
 [data-es-radius="sharp"] {

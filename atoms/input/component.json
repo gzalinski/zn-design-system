@@ -25,7 +25,8 @@
       "values": [
         "sm",
         "md",
-        "lg"
+        "lg",
+        "xl"
       ],
       "default": "md"
     },

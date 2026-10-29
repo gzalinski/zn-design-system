@@ -28,6 +28,7 @@
 .es-button[data-style="ghost"]:hover { background: var(--t-soft); }
 .es-button[data-size="sm"] { block-size: var(--es-control-height-sm); padding-inline: 12px; font-size: 14px; }
 .es-button[data-size="lg"] { block-size: var(--es-control-height-lg); padding-inline: 20px; }
+.es-button[data-size="xl"] { block-size: var(--es-control-height-xl); padding-inline: 28px; font-size: 18px; gap: var(--es-space-150); }
 .es-button[data-full] { inline-size: 100%; }
 .es-button:disabled:not([aria-busy="true"]), .es-button[aria-disabled="true"]:not([aria-busy="true"]) { background: var(--es-disabled-bg); color: var(--es-disabled-text); border-color: transparent; cursor: not-allowed; }
 .es-button svg { inline-size: 1.125em; block-size: 1.125em; flex: none; }
@@ -35,6 +36,7 @@
 .es-button[data-shape] { inline-size: var(--es-control-height-md); padding-inline: 0; }
 .es-button[data-shape][data-size="sm"] { inline-size: var(--es-control-height-sm); }
 .es-button[data-shape][data-size="lg"] { inline-size: var(--es-control-height-lg); }
+.es-button[data-shape][data-size="xl"] { inline-size: var(--es-control-height-xl); }
 .es-button[data-shape="square"] { border-radius: min(var(--es-radius-control), var(--es-radius-image)); }
 .es-button[data-shape="circle"] { border-radius: 50%; }
 
@@ -59,6 +61,8 @@
 .es-button[data-size="sm"] .es-button__part { min-inline-size: var(--es-control-height-sm); padding-inline: 8px; }
 .es-button[data-size="lg"] .es-button__label { padding-inline: 28px; }
 .es-button[data-size="lg"] .es-button__part { min-inline-size: var(--es-control-height-lg); }
+.es-button[data-size="xl"] .es-button__label { padding-inline: 32px; }
+.es-button[data-size="xl"] .es-button__part { min-inline-size: var(--es-control-height-xl); padding-inline: 16px; }
 .es-button[data-split="line"] .es-button__part:last-child { border-inline-start: 1px solid var(--_divider); }
 .es-button[data-split="line"] .es-button__part:first-child { border-inline-end: 1px solid var(--_divider); }
 .es-button[data-split="fill"] .es-button__part { background: var(--t-bga); }

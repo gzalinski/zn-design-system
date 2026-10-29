@@ -11,7 +11,8 @@
     "A search row: input and button share data-size",
     "Icon-only (data-shape) for compact repeated actions: favourite, share, close — always with aria-label",
     "Loading (aria-busy) while an action runs after click",
-    "Split (data-split) when the icon names the action: download, external link"
+    "Split (data-split) when the icon names the action: download, external link",
+    "xl for a hero or a single big CTA, at most one per page"
   ],
   "avoidWhen": [
     "Plain navigation: use Link",
@@ -64,7 +65,8 @@
       "values": [
         "sm",
         "md",
-        "lg"
+        "lg",
+        "xl"
       ],
       "default": "md"
     },
