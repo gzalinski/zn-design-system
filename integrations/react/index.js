@@ -7,6 +7,7 @@ export { Input } from './Input.jsx';
 export { Alert } from './Alert.jsx';
 export { Card } from './Card.jsx';
 export { Dropdown } from './Dropdown.jsx';
+export { InfoItem } from './InfoItem.jsx';
 export { Pagination } from './Pagination.jsx';
 export { Subscribe } from './Subscribe.jsx';
 export { Cta } from './Cta.jsx';

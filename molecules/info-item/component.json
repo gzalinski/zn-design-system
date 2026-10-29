@@ -1,0 +1,118 @@
+{
+  "id": "info-item",
+  "name": "Info item",
+  "level": "molecule",
+  "category": "Content",
+  "status": "draft",
+  "description": "Icon in a circle with a bold title and a text or link: contact details, opening hours, feature strips. Lists use es-info-list with data-cols.",
+  "useWhen": [
+    "Contact details (phone, email, address, opening hours)",
+    "Feature or benefit strips under a hero or in a footer"
+  ],
+  "avoidWhen": [
+    "Long descriptions: use Card",
+    "Navigation: use links or Dropdown"
+  ],
+  "keywords": [
+    "contact",
+    "info",
+    "address",
+    "phone",
+    "email",
+    "opening hours",
+    "feature",
+    "icon",
+    "contact info"
+  ],
+  "props": {
+    "icon": {
+      "attr": "data-style",
+      "values": [
+        "solid",
+        "soft",
+        "outline"
+      ],
+      "default": "solid"
+    },
+    "tone": {
+      "attr": "data-tone",
+      "values": [
+        "primary",
+        "secondary",
+        "accent",
+        "info",
+        "success",
+        "warning",
+        "error",
+        "neutral"
+      ],
+      "default": "primary"
+    },
+    "size": {
+      "attr": "data-size",
+      "values": [
+        "md",
+        "sm"
+      ],
+      "default": "md"
+    },
+    "cols": {
+      "attr": "data-cols",
+      "values": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "default": "auto"
+    }
+  },
+  "parts": {
+    "es-info": "One item (li or div)",
+    "es-info__icon": "Circle with the icon (data-style, data-tone)",
+    "es-info__body": "Title and text wrapper",
+    "es-info__title": "Bold title",
+    "es-info__text": "Text or link",
+    "es-info-list": "Grid of items; data-cols for fixed columns"
+  },
+  "tokens": [
+    "--es-primary-bg",
+    "--es-primary-soft",
+    "--es-space-150",
+    "--es-body-md-size",
+    "--es-link"
+  ],
+  "uses": [],
+  "snippet": "<li class=\"es-info\"><span class=\"es-info__icon\"><svg>…</svg></span><div class=\"es-info__body\"><p class=\"es-info__title\">Phone:</p><p class=\"es-info__text\"><a href=\"tel:+37357839349\">578-393-4937</a></p></div></li>",
+  "react": {
+    "element": "div",
+    "className": "es-info"
+  },
+  "examples": [
+    {
+      "id": "outline",
+      "title": "Outline icons on a dark surface",
+      "description": "data-style=\"outline\" uses the text colour, so the circle keeps its outline on dark surfaces. Phone and email as links."
+    },
+    {
+      "id": "soft",
+      "title": "Soft icons with accent tint",
+      "description": "data-style=\"soft\" uses the tone surface with tone text. Good for a light section with several contact channels."
+    },
+    {
+      "id": "solid",
+      "title": "Solid icons in a row",
+      "description": "Default solid circle. Four items in one row; they wrap to two columns on tablets and one on phones."
+    },
+    {
+      "id": "features",
+      "title": "Feature strip",
+      "description": "The same item as a feature row: accent icons on a dark background, title plus short description."
+    },
+    {
+      "id": "compact",
+      "title": "Compact",
+      "description": "data-size=\"sm\" with neutral soft icons for footers, sidebars and dense pages."
+    }
+  ]
+}
