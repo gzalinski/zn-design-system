@@ -1,16 +1,50 @@
-<div style="display:flex;flex-direction:column;gap:16px">
-  <div style="display:flex;flex-wrap:wrap;gap:8px">
+<div style="display:flex;flex-direction:column;gap:12px">
+  <p style="margin:8px 0 0;font:600 12px/1 var(--es-font-text);letter-spacing:.04em;text-transform:uppercase;color:var(--es-text-tertiary)">Variants</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
     <button class="es-button" type="button">Add to cart</button>
     <button class="es-button" type="button" data-tone="secondary">Book a test drive</button>
     <button class="es-button" type="button" data-style="soft">Save search</button>
     <button class="es-button" type="button" data-style="outline">Details</button>
     <button class="es-button" type="button" data-style="ghost">Cancel</button>
   </div>
+  <p style="margin:8px 0 0;font:600 12px/1 var(--es-font-text);letter-spacing:.04em;text-transform:uppercase;color:var(--es-text-tertiary)">Sizes and states</p>
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
     <button class="es-button" type="button" data-size="sm">Small</button>
     <button class="es-button" type="button">Medium</button>
     <button class="es-button" type="button" data-size="lg">Large</button>
     <button class="es-button" type="button" data-tone="error" data-style="outline">Delete</button>
     <button class="es-button" type="button" disabled>Disabled</button>
+  </div>
+  <p style="margin:8px 0 0;font:600 12px/1 var(--es-font-text);letter-spacing:.04em;text-transform:uppercase;color:var(--es-text-tertiary)">With icon</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+    <button class="es-button" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>Like</button>
+    <button class="es-button" type="button" data-style="outline">Like<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+    <button class="es-button" type="button" data-style="soft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>Download</button>
+  </div>
+  <p style="margin:8px 0 0;font:600 12px/1 var(--es-font-text);letter-spacing:.04em;text-transform:uppercase;color:var(--es-text-tertiary)">Icon only: square and circle</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+    <button class="es-button" type="button" data-shape="square" aria-label="Add to favourites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+    <button class="es-button" type="button" data-shape="circle" aria-label="Add to favourites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+    <button class="es-button" type="button" data-shape="square" data-style="outline" aria-label="Add to favourites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+    <button class="es-button" type="button" data-shape="circle" data-style="soft" aria-label="Add to favourites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+    <button class="es-button" type="button" data-shape="circle" data-style="ghost" data-size="sm" aria-label="Add to favourites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+  </div>
+  <p style="margin:8px 0 0;font:600 12px/1 var(--es-font-text);letter-spacing:.04em;text-transform:uppercase;color:var(--es-text-tertiary)">Loading</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+    <button class="es-button" type="button" data-shape="square" aria-busy="true" aria-label="Loading"><span class="es-spinner" aria-hidden="true"></span></button>
+    <button class="es-button" type="button" aria-busy="true"><span class="es-spinner" aria-hidden="true"></span>Sending…</button>
+    <button class="es-button" type="button" data-style="outline" aria-busy="true"><span class="es-spinner" aria-hidden="true"></span>Loading</button>
+  </div>
+  <p style="margin:8px 0 0;font:600 12px/1 var(--es-font-text);letter-spacing:.04em;text-transform:uppercase;color:var(--es-text-tertiary)">Split: line</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+    <button class="es-button" type="button" data-split="line" data-size="lg"><span class="es-button__label">Download</span><span class="es-button__part"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12l4 4 4-4"/></svg></span></button>
+    <button class="es-button" type="button" data-split="line" data-size="lg"><span class="es-button__part"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12l4 4 4-4"/></svg></span><span class="es-button__label">Download</span></button>
+    <button class="es-button" type="button" data-split="line" data-size="lg" data-style="outline"><span class="es-button__label">Download</span><span class="es-button__part"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></span></button>
+  </div>
+  <p style="margin:8px 0 0;font:600 12px/1 var(--es-font-text);letter-spacing:.04em;text-transform:uppercase;color:var(--es-text-tertiary)">Split: fill</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+    <button class="es-button" type="button" data-split="fill" data-size="lg"><span class="es-button__label">Download</span><span class="es-button__part"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12l4 4 4-4"/></svg></span></button>
+    <button class="es-button" type="button" data-split="fill" data-size="lg"><span class="es-button__part"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12l4 4 4-4"/></svg></span><span class="es-button__label">Download</span></button>
+    <button class="es-button" type="button" data-split="fill" data-size="lg" data-style="soft"><span class="es-button__label">Download</span><span class="es-button__part"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></span></button>
   </div>
 </div>

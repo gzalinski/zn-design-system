@@ -225,7 +225,7 @@ function Single({ c, ctx }) {
       {tab === 'props' && (
         Object.keys(c.props).length === 0 ? <p className="empty">No props. Use the HTML as shown; the look comes from tokens.</p> : (
           <table className="table"><thead><tr><th>Prop</th><th>Attribute</th><th>Values</th><th>Default</th></tr></thead>
-            <tbody>{Object.entries(c.props).map(([k, p]) => <tr key={k}><td><code>{k}</code></td><td><code>{p.attr}</code></td><td>{p.values ? p.values.map((v) => <code key={v} className="chip">{v}</code>) : <code className="chip">boolean</code>}</td><td><code>{String(p.default)}</code></td></tr>)}</tbody></table>
+            <tbody>{Object.entries(c.props).map(([k, p]) => <tr key={k}><td><code>{k}</code></td><td><code>{p.attr}</code></td><td>{p.values ? p.values.map((v) => <code key={v} className="chip">{v}</code>) : <code className="chip">boolean</code>}</td><td><code>{p.default == null ? "—" : String(p.default)}</code></td></tr>)}</tbody></table>
         )
       )}
       {tab === 'usage' && (

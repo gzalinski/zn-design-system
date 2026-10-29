@@ -29,8 +29,40 @@
 .es-button[data-size="sm"] { block-size: var(--es-control-height-sm); padding-inline: 12px; font-size: 14px; }
 .es-button[data-size="lg"] { block-size: var(--es-control-height-lg); padding-inline: 20px; }
 .es-button[data-full] { inline-size: 100%; }
-.es-button:disabled, .es-button[aria-disabled="true"] { background: var(--es-disabled-bg); color: var(--es-disabled-text); border-color: transparent; cursor: not-allowed; }
+.es-button:disabled:not([aria-busy="true"]), .es-button[aria-disabled="true"]:not([aria-busy="true"]) { background: var(--es-disabled-bg); color: var(--es-disabled-text); border-color: transparent; cursor: not-allowed; }
 .es-button svg { inline-size: 1.125em; block-size: 1.125em; flex: none; }
+/* Icon-only: square or circle, same height as the size. Always give it an aria-label. */
+.es-button[data-shape] { inline-size: var(--es-control-height-md); padding-inline: 0; }
+.es-button[data-shape][data-size="sm"] { inline-size: var(--es-control-height-sm); }
+.es-button[data-shape][data-size="lg"] { inline-size: var(--es-control-height-lg); }
+.es-button[data-shape="square"] { border-radius: min(var(--es-radius-control), var(--es-radius-image)); }
+.es-button[data-shape="circle"] { border-radius: 50%; }
+
+/* Loading: aria-busy="true" + .es-spinner. Keeps the tone colors (unlike disabled) and blocks clicks. */
+.es-button[aria-busy="true"] { pointer-events: none; cursor: progress; }
+.es-spinner {
+  inline-size: 1.125em; block-size: 1.125em; flex: none; border-radius: 50%;
+  border: 2px solid currentColor; border-inline-end-color: transparent;
+  animation: es-spin 0.7s linear infinite;
+}
+@keyframes es-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .es-spinner { animation-duration: 2s; } }
+
+/* Split: label + icon part separated by a line (data-split="line") or a darker block (data-split="fill"). */
+.es-button[data-split] { --_divider: color-mix(in srgb, currentColor 35%, transparent); gap: 0; padding-inline: 0; overflow: hidden; }
+.es-button[data-split][data-style="outline"] { --_divider: var(--t-strong); }
+.es-button__label { padding-inline: 20px; }
+.es-button__part { align-self: stretch; display: inline-grid; place-items: center; min-inline-size: var(--es-control-height-md); padding-inline: 12px; }
+.es-button[data-size="sm"] .es-button__label { padding-inline: 14px; }
+.es-button[data-size="sm"] .es-button__part { min-inline-size: var(--es-control-height-sm); padding-inline: 8px; }
+.es-button[data-size="lg"] .es-button__label { padding-inline: 28px; }
+.es-button[data-size="lg"] .es-button__part { min-inline-size: var(--es-control-height-lg); }
+.es-button[data-split="line"] .es-button__part:last-child { border-inline-start: 1px solid var(--_divider); }
+.es-button[data-split="line"] .es-button__part:first-child { border-inline-end: 1px solid var(--_divider); }
+.es-button[data-split="fill"] .es-button__part { background: var(--t-bga); }
+.es-button[data-split="fill"][data-style="soft"] .es-button__part,
+.es-button[data-split="fill"][data-style="outline"] .es-button__part,
+.es-button[data-split="fill"][data-style="ghost"] .es-button__part { background: var(--t-surface); }
 /* On a primary surface the default button flips: light fill, primary text. */
 [data-surface="primary"] .es-button:not([data-tone]):not([data-style]) { --t-bg: var(--es-primary-text-inverted); --t-bgh: var(--es-primary-soft); --t-bga: var(--es-primary-surface); --t-inv: var(--es-primary-bg); }
 @media (pointer: coarse) {

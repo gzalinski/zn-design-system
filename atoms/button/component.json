@@ -4,16 +4,21 @@
   "level": "atom",
   "category": "Actions",
   "status": "stable",
-  "description": "Triggers an action that changes state: submit, add to cart, enrol. One fill button per section.",
+  "description": "Triggers an action that changes state: submit, add to cart, enrol. Supports icons (leading, trailing, icon-only square or circle), a loading state and a split layout with a separate icon part. One fill button per section.",
   "useWhen": [
     "An action changes state (submit, add to cart, save)",
     "The main action of a section (fill style)",
-    "A search row: input and button share data-size"
+    "A search row: input and button share data-size",
+    "Icon-only (data-shape) for compact repeated actions: favourite, share, close — always with aria-label",
+    "Loading (aria-busy) while an action runs after click",
+    "Split (data-split) when the icon names the action: download, external link"
   ],
   "avoidWhen": [
     "Plain navigation: use Link",
     "Accent tone on actions: accent is never an action",
-    "Disabled as the only signal: explain why in helper text"
+    "Disabled as the only signal: explain why in helper text",
+    "Icon-only for the main action of a section: give it text",
+    "Two different actions in one split button: use two buttons"
   ],
   "keywords": [
     "button",
@@ -21,7 +26,13 @@
     "action",
     "submit",
     "buton",
-    "acțiune"
+    "acțiune",
+    "icon",
+    "loading",
+    "spinner",
+    "split",
+    "square",
+    "circle"
   ],
   "props": {
     "tone": {
@@ -61,6 +72,27 @@
       "attr": "data-full",
       "type": "boolean",
       "default": false
+    },
+    "shape": {
+      "attr": "data-shape",
+      "values": [
+        "square",
+        "circle"
+      ],
+      "default": null
+    },
+    "loading": {
+      "attr": "aria-busy",
+      "type": "boolean",
+      "default": false
+    },
+    "split": {
+      "attr": "data-split",
+      "values": [
+        "line",
+        "fill"
+      ],
+      "default": null
     }
   },
   "tokens": [
@@ -72,7 +104,7 @@
     "--es-radius-control",
     "--es-focus-ring-color"
   ],
-  "snippet": "<button class=\"es-button\" type=\"button\" data-tone=\"primary\" data-size=\"md\">Add to cart</button>",
+  "snippet": "<button class=\"es-button\" type=\"button\" aria-busy=\"true\"><span class=\"es-spinner\" aria-hidden=\"true\"></span>Sending…</button>",
   "react": {
     "element": "button",
     "className": "es-button",
