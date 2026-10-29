@@ -40,3 +40,6 @@ export const previewCss = (c, seen = new Set()) => {
   const deps = c.uses.map((u) => COMPONENTS.find((x) => x.id === u)).filter(Boolean).map((d) => previewCss(d, seen)).join('\n');
   return deps + '\n' + source(c).css;
 };
+
+// All component CSS, for examples that combine components (e.g. a badge inside a button).
+export const allCss = () => COMPONENTS.map((c) => source(c).css).join('\n');

@@ -3,7 +3,7 @@ import {
   Search, Sun, Moon, Upload, Download, PanelRightClose, PanelRightOpen, Smartphone, Tablet, Laptop, Monitor,
   Copy, Check, ChevronRight, ChevronLeft, FileDown, Palette, Ruler, Shapes, ShieldCheck
 } from 'lucide-react';
-import { THEMES, COMPONENTS, LEVELS, FOUNDATION, VERSION, source, previewCss, exampleHtml } from './data.js';
+import { THEMES, COMPONENTS, LEVELS, FOUNDATION, VERSION, source, previewCss, exampleHtml, allCss } from './data.js';
 import { htmlToJsx } from '../../lib/htmljsx.js';
 import { themeCss, themeColors, validateTheme, TONES, DENSITIES, RADII } from '../../lib/tokens.js';
 import { FOUNDATION_HTML } from './foundation.js';
@@ -257,7 +257,7 @@ function Example({ e, c, ctx, width }) {
         {['preview', 'html', 'jsx'].map((v) => <button key={v} role="tab" type="button" aria-selected={view === v} onClick={() => setView(v)}>{v === 'preview' ? 'Preview' : v.toUpperCase()}</button>)}
       </div>
       <div className="ex-box">
-        {view === 'preview' && <div className="ex-stage"><Preview html={`<div class="ex-row">${html}</div>`} css={previewCss(c) + '.ex-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}'} {...ctx} width={width || '100%'} pad={40} title={e.title} /></div>}
+        {view === 'preview' && <div className="ex-stage"><Preview html={`<div class="ex-row">${html}</div>`} css={allCss() + '.ex-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}'} {...ctx} width={width || '100%'} pad={40} title={e.title} /></div>}
         {view === 'html' && <Code text={html} />}
         {view === 'jsx' && <Code text={htmlToJsx(html, COMPONENTS)} />}
       </div>

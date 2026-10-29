@@ -11,7 +11,7 @@ export default function Preview({ html, css = '', js = '', tokens, mode, density
 <style>${tokens}</style><style>${BASE_CSS}</style><style>${css}</style>
 <style>html,body{background:var(--es-base-bg)}body{margin:0;padding:${pad}px;${scale !== 1 ? `zoom:${scale};` : ''}}${fit ? 'body{pointer-events:none;overflow:hidden}' : ''}</style></head>
 <body>${html}<script>${js}</script><script>
-const send=()=>parent.postMessage({esFrame:'${id}',h:document.documentElement.scrollHeight},'*');
+const send=()=>parent.postMessage({esFrame:'${id}',h:Math.ceil(document.body.getBoundingClientRect().height)},'*');
 new ResizeObserver(send).observe(document.body);addEventListener('load',send);
 document.addEventListener('click',e=>{if(e.target.closest('a[href="#"]'))e.preventDefault();});
 </script></body></html>`, [html, css, js, tokens, mode, density, radius, fit, scale, pad, id]);

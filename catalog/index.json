@@ -37,7 +37,8 @@
       "description": "Short label or status. Soft by default; data-status adds a dot and 14px text for important states (stock, order).",
       "useWhen": [
         "Labelling an item (Featured, Draft)",
-        "Showing a status that matters (In stock, Sold)"
+        "Showing a status that matters (In stock, Sold)",
+        "A counter inside a button (Inbox +99)"
       ],
       "avoidWhen": [
         "Clickable filters: use Chip",
@@ -49,7 +50,10 @@
         "status",
         "stock",
         "tag",
-        "etichetă"
+        "etichetă",
+        "counter",
+        "count",
+        "notification"
       ],
       "props": {
         "tone": {
@@ -70,7 +74,8 @@
           "attr": "data-style",
           "values": [
             "soft",
-            "solid"
+            "solid",
+            "outline"
           ],
           "default": "soft"
         },
@@ -78,6 +83,15 @@
           "attr": "data-status",
           "type": "boolean",
           "default": false
+        },
+        "size": {
+          "attr": "data-size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "default": "md"
         }
       },
       "tokens": [
@@ -88,7 +102,44 @@
       ],
       "uses": [],
       "snippet": "<span class=\"es-badge\" data-tone=\"success\" data-status>In stock</span>",
-      "examples": [],
+      "examples": [
+        {
+          "id": "colors",
+          "title": "Colors",
+          "description": "Soft by default: tone surface with tone text.",
+          "file": "atoms/badge/examples/colors.html"
+        },
+        {
+          "id": "solid",
+          "title": "Solid badges",
+          "description": "data-style=\"solid\" for strong emphasis, such as New or a counter.",
+          "file": "atoms/badge/examples/solid.html"
+        },
+        {
+          "id": "outline",
+          "title": "Outline badges",
+          "description": "Transparent with a tone border. Works on coloured surfaces.",
+          "file": "atoms/badge/examples/outline.html"
+        },
+        {
+          "id": "sizes",
+          "title": "Sizes",
+          "description": "sm (18px), md (22px, default) and lg (28px).",
+          "file": "atoms/badge/examples/sizes.html"
+        },
+        {
+          "id": "status",
+          "title": "Status",
+          "description": "data-status adds a dot and 14px text for states that matter. Never rely on colour alone.",
+          "file": "atoms/badge/examples/status.html"
+        },
+        {
+          "id": "in-button",
+          "title": "Badge in a button",
+          "description": "A counter inside a button. The badge shrinks to fit the button size.",
+          "file": "atoms/badge/examples/in-button.html"
+        }
+      ],
       "react": {
         "component": "Badge",
         "element": "span",
