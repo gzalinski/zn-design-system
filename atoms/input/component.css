@@ -1,0 +1,17 @@
+/* Input — atom. Same heights as Button so they align in a row. 16px text avoids iOS zoom. */
+.es-input {
+  display: block; inline-size: 100%;
+  block-size: var(--es-control-height-md); padding-inline: 12px;
+  border: 1px solid var(--es-border-strong); border-radius: var(--es-radius-control);
+  background: var(--es-base-surface); color: var(--es-text-primary);
+  font: 400 16px/1.2 var(--es-font-text);
+  transition: border-color var(--es-duration-fast) var(--es-ease-standard), box-shadow var(--es-duration-fast) var(--es-ease-standard);
+}
+.es-input::placeholder { color: var(--es-text-tertiary); }
+.es-input:focus { outline: none; border-color: var(--es-border-focus); box-shadow: 0 0 0 1px var(--es-border-focus); }
+.es-input:focus-visible { outline: var(--es-focus-ring-width) solid var(--es-focus-ring-color); outline-offset: var(--es-focus-ring-offset); }
+.es-input[aria-invalid="true"] { border-color: var(--es-error-strong); }
+.es-input:disabled { background: var(--es-disabled-bg); color: var(--es-disabled-text); border-color: var(--es-disabled-border); cursor: not-allowed; }
+.es-input[data-size="sm"] { block-size: var(--es-control-height-sm); font-size: 14px; }
+.es-input[data-size="lg"] { block-size: var(--es-control-height-lg); }
+textarea.es-input { block-size: auto; min-block-size: 96px; padding-block: 10px; resize: vertical; }

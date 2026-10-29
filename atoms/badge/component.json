@@ -1,0 +1,64 @@
+{
+  "id": "badge",
+  "name": "Badge",
+  "level": "atom",
+  "category": "Display",
+  "status": "stable",
+  "description": "Short label or status. Soft by default; data-status adds a dot and 14px text for important states (stock, order).",
+  "useWhen": [
+    "Labelling an item (Featured, Draft)",
+    "Showing a status that matters (In stock, Sold)"
+  ],
+  "avoidWhen": [
+    "Clickable filters: use Chip",
+    "More than one accent badge per viewport"
+  ],
+  "keywords": [
+    "badge",
+    "label",
+    "status",
+    "stock",
+    "tag",
+    "etichetă"
+  ],
+  "props": {
+    "tone": {
+      "attr": "data-tone",
+      "values": [
+        "primary",
+        "secondary",
+        "accent",
+        "info",
+        "success",
+        "warning",
+        "error",
+        "neutral"
+      ],
+      "default": "primary"
+    },
+    "variant": {
+      "attr": "data-style",
+      "values": [
+        "soft",
+        "solid"
+      ],
+      "default": "soft"
+    },
+    "status": {
+      "attr": "data-status",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "tokens": [
+    "--es-{tone}-soft",
+    "--es-{tone}-text",
+    "--es-radius-badge",
+    "--es-badge-size"
+  ],
+  "snippet": "<span class=\"es-badge\" data-tone=\"success\" data-status>In stock</span>",
+  "react": {
+    "element": "span",
+    "className": "es-badge"
+  }
+}

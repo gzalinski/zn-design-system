@@ -1,0 +1,53 @@
+{
+  "id": "input",
+  "name": "Input",
+  "level": "atom",
+  "category": "Forms",
+  "status": "stable",
+  "description": "Single-line text field. Use inside Form field for label, helper and error text.",
+  "useWhen": [
+    "Free text, email, number, search"
+  ],
+  "avoidWhen": [
+    "A fixed list of options: use Select",
+    "Long text: use textarea.es-input"
+  ],
+  "keywords": [
+    "input",
+    "field",
+    "text",
+    "search",
+    "câmp"
+  ],
+  "props": {
+    "size": {
+      "attr": "data-size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    },
+    "invalid": {
+      "attr": "aria-invalid",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "tokens": [
+    "--es-border-strong",
+    "--es-border-focus",
+    "--es-control-height-md",
+    "--es-radius-control"
+  ],
+  "uses": [
+    "button"
+  ],
+  "snippet": "<input class=\"es-input\" type=\"email\" placeholder=\"name@company.com\">",
+  "react": {
+    "element": "input",
+    "className": "es-input",
+    "void": true
+  }
+}

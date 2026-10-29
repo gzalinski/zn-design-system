@@ -1,0 +1,42 @@
+{
+  "id": "chip",
+  "name": "Chip",
+  "level": "atom",
+  "category": "Forms",
+  "status": "stable",
+  "description": "Toggleable filter or removable selection. State lives in aria-pressed.",
+  "useWhen": [
+    "Quick filters above results",
+    "Active filters that can be removed"
+  ],
+  "avoidWhen": [
+    "Static labels: use Badge or Tag"
+  ],
+  "keywords": [
+    "chip",
+    "filter",
+    "pill",
+    "toggle",
+    "filtru"
+  ],
+  "props": {
+    "pressed": {
+      "attr": "aria-pressed",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "tokens": [
+    "--es-primary-soft",
+    "--es-primary-border",
+    "--es-radius-chip"
+  ],
+  "snippet": "<button class=\"es-chip\" type=\"button\" aria-pressed=\"true\">Diesel</button>",
+  "react": {
+    "element": "button",
+    "className": "es-chip",
+    "defaults": {
+      "type": "button"
+    }
+  }
+}

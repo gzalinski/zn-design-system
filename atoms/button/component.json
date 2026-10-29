@@ -1,0 +1,83 @@
+{
+  "id": "button",
+  "name": "Button",
+  "level": "atom",
+  "category": "Actions",
+  "status": "stable",
+  "description": "Triggers an action that changes state: submit, add to cart, enrol. One fill button per section.",
+  "useWhen": [
+    "An action changes state (submit, add to cart, save)",
+    "The main action of a section (fill style)",
+    "A search row: input and button share data-size"
+  ],
+  "avoidWhen": [
+    "Plain navigation: use Link",
+    "Accent tone on actions: accent is never an action",
+    "Disabled as the only signal: explain why in helper text"
+  ],
+  "keywords": [
+    "button",
+    "cta",
+    "action",
+    "submit",
+    "buton",
+    "acțiune"
+  ],
+  "props": {
+    "tone": {
+      "attr": "data-tone",
+      "values": [
+        "primary",
+        "secondary",
+        "accent",
+        "info",
+        "success",
+        "warning",
+        "error",
+        "neutral"
+      ],
+      "default": "primary"
+    },
+    "variant": {
+      "attr": "data-style",
+      "values": [
+        "fill",
+        "soft",
+        "outline",
+        "ghost"
+      ],
+      "default": "fill"
+    },
+    "size": {
+      "attr": "data-size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    },
+    "full": {
+      "attr": "data-full",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "tokens": [
+    "--es-{tone}-bg",
+    "--es-{tone}-bg-hover",
+    "--es-{tone}-bg-active",
+    "--es-{tone}-text-inverted",
+    "--es-control-height-md",
+    "--es-radius-control",
+    "--es-focus-ring-color"
+  ],
+  "snippet": "<button class=\"es-button\" type=\"button\" data-tone=\"primary\" data-size=\"md\">Add to cart</button>",
+  "react": {
+    "element": "button",
+    "className": "es-button",
+    "defaults": {
+      "type": "button"
+    }
+  }
+}

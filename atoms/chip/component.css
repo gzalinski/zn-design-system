@@ -1,0 +1,13 @@
+/* Chip — atom. Toggleable filter; aria-pressed carries the state. */
+.es-chip {
+  display: inline-flex; align-items: center; gap: var(--es-space-075);
+  block-size: 32px; padding-inline: 12px;
+  border: 1px solid var(--es-border-default); border-radius: var(--es-radius-chip);
+  background: var(--es-base-surface); color: var(--es-text-primary);
+  font: 500 14px/1 var(--es-font-text); cursor: pointer; position: relative;
+}
+.es-chip:hover { background: var(--es-base-surface-hover); }
+.es-chip[aria-pressed="true"] { background: var(--es-primary-soft); border-color: var(--es-primary-border); color: var(--es-primary-text); }
+.es-chip:focus-visible { outline: var(--es-focus-ring-width) solid var(--es-focus-ring-color); outline-offset: var(--es-focus-ring-offset); }
+.es-chip svg { inline-size: 14px; block-size: 14px; }
+@media (pointer: coarse) { .es-chip::after { content: ""; position: absolute; inset: -6px 0; } }

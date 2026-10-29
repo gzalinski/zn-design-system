@@ -1,0 +1,5 @@
+# Keeps generated files in sync on every commit.
+pre-commit:
+  commands:
+    build:
+      run: node tools/build.js && git add tokens/dist catalog integrations/react

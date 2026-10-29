@@ -1,0 +1,9 @@
+/* Default page — layout. Header, main, footer. layout-gap is 0 when main starts with a section. */
+.es-page { min-block-size: 100vh; display: flex; flex-direction: column; }
+.es-site-header { position: sticky; top: 0; z-index: var(--es-z-sticky); background: var(--es-base-surface); border-bottom: 1px solid var(--es-border-subtle); }
+.es-site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--es-space-300); block-size: var(--es-header-height); }
+.es-site-header nav { display: flex; gap: var(--es-space-300); }
+.es-site-header nav a { color: var(--es-text-primary); text-decoration: none; font-weight: 500; }
+.es-page main { flex: 1; }
+.es-page main:not(:has(> .es-section:first-child)) { padding-block-start: var(--es-layout-gap); }
+.es-site-footer { padding-block: var(--es-space-500); background: var(--es-base-surface); border-top: 1px solid var(--es-border-subtle); color: var(--es-text-tertiary); font-size: var(--es-body-sm-size); }

@@ -1,0 +1,3 @@
+/* CTA — section. On data-surface="primary" text, links and the default button remap automatically. */
+.es-cta__inner { display: flex; flex-direction: column; align-items: center; gap: var(--es-space-250); text-align: center; }
+.es-cta__inner p { margin: 0; }

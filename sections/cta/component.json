@@ -1,0 +1,44 @@
+{
+  "id": "cta",
+  "name": "CTA",
+  "level": "section",
+  "category": "Marketing",
+  "status": "stable",
+  "description": "Single call to action on a coloured surface. One CTA section per page.",
+  "useWhen": [
+    "End of a page or between long content blocks"
+  ],
+  "avoidWhen": [
+    "Several actions with equal weight"
+  ],
+  "keywords": [
+    "cta",
+    "call to action",
+    "banner",
+    "conversion"
+  ],
+  "props": {
+    "surface": {
+      "attr": "data-surface",
+      "values": [
+        "primary",
+        "soft",
+        "inverse"
+      ],
+      "default": "primary"
+    }
+  },
+  "tokens": [
+    "--es-primary-bg",
+    "--es-primary-text-inverted",
+    "--es-container-narrow"
+  ],
+  "uses": [
+    "button"
+  ],
+  "snippet": "<section class=\"es-section es-cta\" data-surface=\"primary\">…</section>",
+  "react": {
+    "element": "section",
+    "className": "es-section es-cta"
+  }
+}

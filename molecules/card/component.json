@@ -1,0 +1,39 @@
+{
+  "id": "card",
+  "name": "Listing card",
+  "level": "molecule",
+  "category": "Cards",
+  "status": "stable",
+  "description": "Card for a product, listing or course: media, status, title (style h4, tag h3), meta, price. The whole card is clickable via the title link.",
+  "useWhen": [
+    "Results in a listing grid (es-grid data-context)",
+    "Recommendations"
+  ],
+  "avoidWhen": [
+    "Full product details: use Product summary"
+  ],
+  "keywords": [
+    "card",
+    "listing",
+    "product",
+    "anunț",
+    "car",
+    "course"
+  ],
+  "props": {},
+  "tokens": [
+    "--es-radius-card",
+    "--es-elevation-raised-sm",
+    "--es-border-subtle",
+    "--es-h4-size",
+    "--es-price-md-size"
+  ],
+  "uses": [
+    "badge"
+  ],
+  "snippet": "<article class=\"es-card\">…</article>",
+  "react": {
+    "element": "article",
+    "className": "es-card"
+  }
+}

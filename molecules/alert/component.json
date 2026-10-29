@@ -1,0 +1,51 @@
+{
+  "id": "alert",
+  "name": "Alert",
+  "level": "molecule",
+  "category": "Feedback",
+  "status": "stable",
+  "description": "Inline message with icon, title and text. Info by default; tone sets meaning.",
+  "useWhen": [
+    "Feedback after an action",
+    "Important context inside a page or form"
+  ],
+  "avoidWhen": [
+    "Transient feedback: use Toast",
+    "Marketing highlights: use a section with data-surface"
+  ],
+  "keywords": [
+    "alert",
+    "message",
+    "notice",
+    "error",
+    "warning",
+    "success",
+    "mesaj"
+  ],
+  "props": {
+    "tone": {
+      "attr": "data-tone",
+      "values": [
+        "info",
+        "success",
+        "warning",
+        "error"
+      ],
+      "default": "info"
+    }
+  },
+  "tokens": [
+    "--es-{tone}-soft",
+    "--es-{tone}-border",
+    "--es-{tone}-text",
+    "--es-radius-card"
+  ],
+  "snippet": "<div class=\"es-alert\" data-tone=\"success\" role=\"status\"><p class=\"es-alert__title\">Request sent</p><p class=\"es-alert__text\">We will call you back.</p></div>",
+  "react": {
+    "element": "div",
+    "className": "es-alert",
+    "defaults": {
+      "role": "status"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "checkbox",
+  "name": "Checkbox",
+  "level": "atom",
+  "category": "Forms",
+  "status": "stable",
+  "description": "Checkbox or radio with its label. The whole label is clickable (touch target ≥ 44px with padding).",
+  "useWhen": [
+    "Multiple choices (checkbox)",
+    "One choice from a short list (radio)"
+  ],
+  "avoidWhen": [
+    "Instant on/off settings: use Toggle"
+  ],
+  "keywords": [
+    "checkbox",
+    "radio",
+    "filter",
+    "option",
+    "bifă"
+  ],
+  "props": {},
+  "tokens": [
+    "--es-primary-bg",
+    "--es-border-strong",
+    "--es-radius-check"
+  ],
+  "snippet": "<label class=\"es-checkbox\"><input type=\"checkbox\"> Diesel</label>",
+  "react": {
+    "element": "label",
+    "className": "es-checkbox"
+  }
+}

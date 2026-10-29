@@ -1,0 +1,35 @@
+{
+  "id": "default-page",
+  "name": "Default page",
+  "level": "layout",
+  "category": "Pages",
+  "status": "draft",
+  "description": "Page skeleton: sticky header, main of stacked sections, footer.",
+  "useWhen": [
+    "Most content pages"
+  ],
+  "avoidWhen": [
+    "Listings with filters: use Sidebar left"
+  ],
+  "keywords": [
+    "layout",
+    "page",
+    "template",
+    "header",
+    "footer"
+  ],
+  "props": {},
+  "tokens": [
+    "--es-header-height",
+    "--es-layout-gap",
+    "--es-z-sticky"
+  ],
+  "uses": [
+    "button"
+  ],
+  "snippet": "<div class=\"es-page\"><header class=\"es-site-header\">…</header><main>…</main><footer class=\"es-site-footer\">…</footer></div>",
+  "react": {
+    "element": "div",
+    "className": "es-page"
+  }
+}

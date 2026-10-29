@@ -1,0 +1,39 @@
+{
+  "id": "green",
+  "name": "Green",
+  "description": "Arvlad green + navy, lime accent. Values from the Arvlad style guide.",
+  "fonts": {
+    "text": "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+    "heading": "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+    "mono": "ui-monospace, SFMono-Regular, Menlo, monospace"
+  },
+  "tones": {
+    "primary": "#3D8618",
+    "secondary": "#0B0F1A",
+    "accent": "#7FD14B",
+    "info": "#0284C7",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "error": "#B42318",
+    "neutral": "#5B6270"
+  },
+  "base": {
+    "light": {
+      "bg": "#E1E4EB", "surface": "#FFFFFF", "surface-hover": "#F5F6F8", "elevated": "#FFFFFF",
+      "text-primary": "#1E2330", "text-secondary": "#0B0F1A", "text-tertiary": "#4A5160",
+      "border-subtle": "#EEF0F4", "border-default": "#E6E8ED", "border-strong": "#7E8592",
+      "disabled-bg": "#EEF0F4", "disabled-text": "#9AA1AD"
+    },
+    "dark": {
+      "bg": "#0B0F1A", "surface": "#141A26", "surface-hover": "#1C2333", "elevated": "#232B3D",
+      "text-primary": "#E8EBF0", "text-secondary": "#9BDB72", "text-tertiary": "#9AA1AD",
+      "border-subtle": "#1C2230", "border-default": "#252C3A", "border-strong": "#5B6270",
+      "disabled-bg": "#1A2030", "disabled-text": "#4A5160"
+    }
+  },
+  "overrides": {
+    "light": { "primary": { "text": "#2F6E12", "border": "#BFE0AC", "soft": "#EAF5E2" } }
+  },
+  "density": "default",
+  "radius": "soft"
+}

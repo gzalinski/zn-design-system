@@ -1,0 +1,11 @@
+/* Pagination — molecule. Current page uses aria-current="page". */
+.es-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: var(--es-space-050); list-style: none; margin: 0; padding: 0; }
+.es-pagination a, .es-pagination span {
+  position: relative; display: inline-grid; place-items: center; min-inline-size: 40px; block-size: 40px; padding-inline: 8px;
+  border: 1px solid var(--es-border-default); border-radius: var(--es-radius-control);
+  background: var(--es-base-surface); color: var(--es-text-primary); text-decoration: none; font: 500 14px/1 var(--es-font-text);
+}
+.es-pagination a:hover { background: var(--es-base-surface-hover); }
+.es-pagination a[aria-current="page"] { background: var(--es-primary-bg); border-color: var(--es-primary-bg); color: var(--es-primary-text-inverted); }
+.es-pagination span { border-color: transparent; background: transparent; color: var(--es-text-tertiary); }
+.es-pagination a:focus-visible { outline: var(--es-focus-ring-width) solid var(--es-focus-ring-color); outline-offset: var(--es-focus-ring-offset); }

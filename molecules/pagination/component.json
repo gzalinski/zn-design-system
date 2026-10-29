@@ -1,0 +1,30 @@
+{
+  "id": "pagination",
+  "name": "Pagination",
+  "level": "molecule",
+  "category": "Navigation",
+  "status": "stable",
+  "description": "Page links for listings. Wrap in nav with aria-label.",
+  "useWhen": [
+    "Listing results over several pages"
+  ],
+  "avoidWhen": [
+    "Infinite feeds: use a Load more button"
+  ],
+  "keywords": [
+    "pagination",
+    "pages",
+    "paginare",
+    "next"
+  ],
+  "props": {},
+  "tokens": [
+    "--es-primary-bg",
+    "--es-radius-control"
+  ],
+  "snippet": "<nav aria-label=\"Pagination\"><ul class=\"es-pagination\">…</ul></nav>",
+  "react": {
+    "element": "ul",
+    "className": "es-pagination"
+  }
+}

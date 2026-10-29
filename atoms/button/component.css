@@ -1,0 +1,38 @@
+/* Button — atom. Variants via data-tone, data-style, data-size. */
+.es-button {
+  --t-bg: var(--es-primary-bg); --t-bgh: var(--es-primary-bg-hover); --t-bga: var(--es-primary-bg-active); --t-text: var(--es-primary-text); --t-inv: var(--es-primary-text-inverted); --t-soft: var(--es-primary-soft); --t-surface: var(--es-primary-surface); --t-border: var(--es-primary-border); --t-strong: var(--es-primary-strong);
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--es-space-100);
+  block-size: var(--es-control-height-md); padding-inline: 16px;
+  border: 1px solid transparent; border-radius: var(--es-radius-control);
+  background: var(--t-bg); color: var(--t-inv);
+  font: var(--es-label-weight) 16px/1 var(--es-font-text); text-decoration: none; white-space: nowrap;
+  cursor: pointer; transition: background-color var(--es-duration-fast) var(--es-ease-standard), border-color var(--es-duration-fast) var(--es-ease-standard);
+}
+.es-button:hover { background: var(--t-bgh); }
+.es-button:active { background: var(--t-bga); }
+.es-button:focus-visible { outline: var(--es-focus-ring-width) solid var(--es-focus-ring-color); outline-offset: var(--es-focus-ring-offset); }
+.es-button[data-tone="primary"] { --t-bg: var(--es-primary-bg); --t-bgh: var(--es-primary-bg-hover); --t-bga: var(--es-primary-bg-active); --t-text: var(--es-primary-text); --t-inv: var(--es-primary-text-inverted); --t-soft: var(--es-primary-soft); --t-surface: var(--es-primary-surface); --t-border: var(--es-primary-border); --t-strong: var(--es-primary-strong); }
+.es-button[data-tone="secondary"] { --t-bg: var(--es-secondary-bg); --t-bgh: var(--es-secondary-bg-hover); --t-bga: var(--es-secondary-bg-active); --t-text: var(--es-secondary-text); --t-inv: var(--es-secondary-text-inverted); --t-soft: var(--es-secondary-soft); --t-surface: var(--es-secondary-surface); --t-border: var(--es-secondary-border); --t-strong: var(--es-secondary-strong); }
+.es-button[data-tone="accent"] { --t-bg: var(--es-accent-bg); --t-bgh: var(--es-accent-bg-hover); --t-bga: var(--es-accent-bg-active); --t-text: var(--es-accent-text); --t-inv: var(--es-accent-text-inverted); --t-soft: var(--es-accent-soft); --t-surface: var(--es-accent-surface); --t-border: var(--es-accent-border); --t-strong: var(--es-accent-strong); }
+.es-button[data-tone="info"] { --t-bg: var(--es-info-bg); --t-bgh: var(--es-info-bg-hover); --t-bga: var(--es-info-bg-active); --t-text: var(--es-info-text); --t-inv: var(--es-info-text-inverted); --t-soft: var(--es-info-soft); --t-surface: var(--es-info-surface); --t-border: var(--es-info-border); --t-strong: var(--es-info-strong); }
+.es-button[data-tone="success"] { --t-bg: var(--es-success-bg); --t-bgh: var(--es-success-bg-hover); --t-bga: var(--es-success-bg-active); --t-text: var(--es-success-text); --t-inv: var(--es-success-text-inverted); --t-soft: var(--es-success-soft); --t-surface: var(--es-success-surface); --t-border: var(--es-success-border); --t-strong: var(--es-success-strong); }
+.es-button[data-tone="warning"] { --t-bg: var(--es-warning-bg); --t-bgh: var(--es-warning-bg-hover); --t-bga: var(--es-warning-bg-active); --t-text: var(--es-warning-text); --t-inv: var(--es-warning-text-inverted); --t-soft: var(--es-warning-soft); --t-surface: var(--es-warning-surface); --t-border: var(--es-warning-border); --t-strong: var(--es-warning-strong); }
+.es-button[data-tone="error"] { --t-bg: var(--es-error-bg); --t-bgh: var(--es-error-bg-hover); --t-bga: var(--es-error-bg-active); --t-text: var(--es-error-text); --t-inv: var(--es-error-text-inverted); --t-soft: var(--es-error-soft); --t-surface: var(--es-error-surface); --t-border: var(--es-error-border); --t-strong: var(--es-error-strong); }
+.es-button[data-tone="neutral"] { --t-bg: var(--es-neutral-bg); --t-bgh: var(--es-neutral-bg-hover); --t-bga: var(--es-neutral-bg-active); --t-text: var(--es-neutral-text); --t-inv: var(--es-neutral-text-inverted); --t-soft: var(--es-neutral-soft); --t-surface: var(--es-neutral-surface); --t-border: var(--es-neutral-border); --t-strong: var(--es-neutral-strong); }
+.es-button[data-style="soft"] { background: var(--t-soft); color: var(--t-text); }
+.es-button[data-style="soft"]:hover, .es-button[data-style="soft"]:active { background: var(--t-surface); }
+.es-button[data-style="outline"] { background: var(--es-base-surface); color: var(--t-text); border-color: var(--t-strong); }
+.es-button[data-style="outline"]:hover { background: var(--es-base-surface-hover); }
+.es-button[data-style="ghost"] { background: transparent; color: var(--t-text); }
+.es-button[data-style="ghost"]:hover { background: var(--t-soft); }
+.es-button[data-size="sm"] { block-size: var(--es-control-height-sm); padding-inline: 12px; font-size: 14px; }
+.es-button[data-size="lg"] { block-size: var(--es-control-height-lg); padding-inline: 20px; }
+.es-button[data-full] { inline-size: 100%; }
+.es-button:disabled, .es-button[aria-disabled="true"] { background: var(--es-disabled-bg); color: var(--es-disabled-text); border-color: transparent; cursor: not-allowed; }
+.es-button svg { inline-size: 1.125em; block-size: 1.125em; flex: none; }
+/* On a primary surface the default button flips: light fill, primary text. */
+[data-surface="primary"] .es-button:not([data-tone]):not([data-style]) { --t-bg: var(--es-primary-text-inverted); --t-bgh: var(--es-primary-soft); --t-bga: var(--es-primary-surface); --t-inv: var(--es-primary-bg); }
+@media (pointer: coarse) {
+  .es-button::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); min-inline-size: 44px; min-block-size: 44px; inline-size: 100%; block-size: 100%; }
+}

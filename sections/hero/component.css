@@ -1,0 +1,6 @@
+/* Hero — section. Two columns from 1024px; image placeholder uses tone surfaces. */
+.es-hero__grid { display: grid; gap: var(--es-space-500); align-items: center; }
+@media (min-width: 1024px) { .es-hero__grid { grid-template-columns: 1.1fr 1fr; } }
+.es-hero__content { display: flex; flex-direction: column; gap: var(--es-space-250); }
+.es-hero__actions { display: flex; flex-wrap: wrap; gap: var(--es-space-150); }
+.es-hero__media { aspect-ratio: 4 / 3; border-radius: var(--es-radius-image); background: linear-gradient(135deg, var(--es-primary-surface), var(--es-accent-soft)); }

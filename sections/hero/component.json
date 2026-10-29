@@ -1,0 +1,46 @@
+{
+  "id": "hero",
+  "name": "Hero",
+  "level": "section",
+  "category": "Marketing",
+  "status": "stable",
+  "description": "Opening section: overline, display title (h1), lead, two actions, media. Uses section-space-xl.",
+  "useWhen": [
+    "Top of a landing or home page"
+  ],
+  "avoidWhen": [
+    "Inner pages: use a page header"
+  ],
+  "keywords": [
+    "hero",
+    "header",
+    "banner",
+    "landing",
+    "intro"
+  ],
+  "props": {
+    "surface": {
+      "attr": "data-surface",
+      "values": [
+        "base",
+        "soft",
+        "primary",
+        "inverse"
+      ],
+      "default": "base"
+    }
+  },
+  "tokens": [
+    "--es-section-space-xl",
+    "--es-display-size",
+    "--es-radius-image"
+  ],
+  "uses": [
+    "button"
+  ],
+  "snippet": "<section class=\"es-section es-hero\" data-space=\"xl\">…</section>",
+  "react": {
+    "element": "section",
+    "className": "es-section es-hero"
+  }
+}
