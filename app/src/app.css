@@ -146,3 +146,17 @@ select { height: 36px; padding: 0 10px; border: 1px solid var(--line-2); border-
   .side { max-height: 40vh; } .page { padding: 20px 16px 48px; } .usage { grid-template-columns: 1fr; }
   .top { flex-wrap: wrap; height: auto; padding: 10px 16px; } .main { overflow: visible; }
 }
+
+/* examples (one per section, like a docs page) */
+.vp-bar { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 8px; color: var(--ink-3); }
+.examples { display: flex; flex-direction: column; gap: 56px; padding-top: 8px; }
+.example h2 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 18px; }
+.example h2 a { display: grid; place-items: center; width: 24px; height: 24px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-3); text-decoration: none; font-size: 13px; font-weight: 400; }
+.example h2 a:hover { color: var(--ink); border-color: var(--line-2); }
+.example > p { margin: 8px 0 14px; color: var(--ink-2); max-width: 75ch; }
+.ex-tabs { display: flex; position: relative; z-index: 1; margin-bottom: -1px; }
+.ex-tabs button { height: 38px; padding: 0 14px; border: 1px solid transparent; border-bottom: 0; border-radius: 8px 8px 0 0; background: none; color: var(--ink-3); cursor: pointer; font-weight: 500; }
+.ex-tabs button[aria-selected="true"] { background: var(--panel); border-color: var(--line); color: var(--ink); }
+.ex-box { border: 1px solid var(--line); border-radius: 0 12px 12px 12px; background: var(--panel); overflow: hidden; }
+.ex-stage { background: repeating-linear-gradient(-45deg, transparent 0 10px, var(--hover) 10px 11px); overflow-x: auto; }
+.ex-box .code { border-radius: 0; }

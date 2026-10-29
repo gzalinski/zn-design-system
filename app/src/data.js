@@ -4,6 +4,7 @@ import baseCss from '../../foundation/base.css?raw';
 
 const themeFiles = import.meta.glob('../../tokens/themes/*.json', { eager: true, import: 'default' });
 const sources = import.meta.glob('../../{atoms,molecules,sections,layouts}/*/component.{html,css,js}', { eager: true, query: '?raw', import: 'default' });
+const exampleFiles = import.meta.glob('../../{atoms,molecules,sections,layouts}/*/examples/*.html', { eager: true, query: '?raw', import: 'default' });
 const react = import.meta.glob('../../integrations/react/*.jsx', { eager: true, query: '?raw', import: 'default' });
 
 export const THEMES = Object.values(themeFiles).sort((a, b) => ['navy', 'yellow', 'green'].indexOf(a.id) - ['navy', 'yellow', 'green'].indexOf(b.id));
@@ -16,6 +17,8 @@ export const source = (c) => ({
   html: pick(sources, c.files.html), css: pick(sources, c.files.css),
   js: c.files.js ? pick(sources, c.files.js) : '', jsx: pick(react, c.files.react)
 });
+
+export const exampleHtml = (e) => exampleFiles['../../' + e.file] || '';
 
 export const LEVELS = [
   { id: 'atom', label: 'Atoms', route: 'atoms' },

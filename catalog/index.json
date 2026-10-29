@@ -88,6 +88,13 @@
       ],
       "uses": [],
       "snippet": "<span class=\"es-badge\" data-tone=\"success\" data-status>In stock</span>",
+      "examples": [],
+      "react": {
+        "component": "Badge",
+        "element": "span",
+        "className": "es-badge",
+        "defaults": {}
+      },
       "files": {
         "html": "atoms/badge/component.html",
         "css": "atoms/badge/component.css",
@@ -204,6 +211,82 @@
       ],
       "uses": [],
       "snippet": "<button class=\"es-button\" type=\"button\" aria-busy=\"true\"><span class=\"es-spinner\" aria-hidden=\"true\"></span>Sending…</button>",
+      "examples": [
+        {
+          "id": "colors",
+          "title": "Colors",
+          "description": "Eight tones. Primary is the default; accent is for highlights, never the main action.",
+          "file": "atoms/button/examples/colors.html"
+        },
+        {
+          "id": "sizes",
+          "title": "Sizes",
+          "description": "sm, md (default), lg and xl. Heights follow density: 32 / 40 / 48 / 56px by default.",
+          "file": "atoms/button/examples/sizes.html"
+        },
+        {
+          "id": "styles",
+          "title": "Fill, soft, outline, ghost",
+          "description": "data-style sets the emphasis. One fill button per section; soft, outline and ghost for the rest.",
+          "file": "atoms/button/examples/styles.html"
+        },
+        {
+          "id": "soft",
+          "title": "Soft buttons",
+          "description": "Tone surface with tone text. Good for secondary actions next to a fill button.",
+          "file": "atoms/button/examples/soft.html"
+        },
+        {
+          "id": "outline",
+          "title": "Outline buttons",
+          "description": "Page surface with a strong tone border.",
+          "file": "atoms/button/examples/outline.html"
+        },
+        {
+          "id": "ghost",
+          "title": "Ghost buttons",
+          "description": "No background until hover. For low-emphasis actions such as Cancel.",
+          "file": "atoms/button/examples/ghost.html"
+        },
+        {
+          "id": "icon",
+          "title": "Button with icon",
+          "description": "Put a Lucide icon before or after the text. The icon inherits the text color.",
+          "file": "atoms/button/examples/icon.html"
+        },
+        {
+          "id": "icon-only",
+          "title": "Square and circle button",
+          "description": "Icon only, width equals height. Always add aria-label.",
+          "file": "atoms/button/examples/icon-only.html"
+        },
+        {
+          "id": "split",
+          "title": "Split button",
+          "description": "The icon gets its own part, separated by a line (data-split=\"line\") or a darker block (data-split=\"fill\"). Icon before or after.",
+          "file": "atoms/button/examples/split.html"
+        },
+        {
+          "id": "loading",
+          "title": "Loading",
+          "description": "aria-busy=\"true\" with an es-spinner. Keeps the tone colors and blocks clicks while the action runs.",
+          "file": "atoms/button/examples/loading.html"
+        },
+        {
+          "id": "disabled",
+          "title": "Disabled",
+          "description": "Use disabled only when the reason is visible nearby; otherwise explain it in helper text.",
+          "file": "atoms/button/examples/disabled.html"
+        }
+      ],
+      "react": {
+        "component": "Button",
+        "element": "button",
+        "className": "es-button",
+        "defaults": {
+          "type": "button"
+        }
+      },
       "files": {
         "html": "atoms/button/component.html",
         "css": "atoms/button/component.css",
@@ -239,6 +322,13 @@
       ],
       "uses": [],
       "snippet": "<label class=\"es-checkbox\"><input type=\"checkbox\"> Diesel</label>",
+      "examples": [],
+      "react": {
+        "component": "Checkbox",
+        "element": "label",
+        "className": "es-checkbox",
+        "defaults": {}
+      },
       "files": {
         "html": "atoms/checkbox/component.html",
         "css": "atoms/checkbox/component.css",
@@ -280,6 +370,15 @@
       ],
       "uses": [],
       "snippet": "<button class=\"es-chip\" type=\"button\" aria-pressed=\"true\">Diesel</button>",
+      "examples": [],
+      "react": {
+        "component": "Chip",
+        "element": "button",
+        "className": "es-chip",
+        "defaults": {
+          "type": "button"
+        }
+      },
       "files": {
         "html": "atoms/chip/component.html",
         "css": "atoms/chip/component.css",
@@ -334,6 +433,13 @@
         "button"
       ],
       "snippet": "<input class=\"es-input\" type=\"email\" placeholder=\"name@company.com\">",
+      "examples": [],
+      "react": {
+        "component": "Input",
+        "element": "input",
+        "className": "es-input",
+        "defaults": {}
+      },
       "files": {
         "html": "atoms/input/component.html",
         "css": "atoms/input/component.css",
@@ -384,6 +490,15 @@
       ],
       "uses": [],
       "snippet": "<div class=\"es-alert\" data-tone=\"success\" role=\"status\"><p class=\"es-alert__title\">Request sent</p><p class=\"es-alert__text\">We will call you back.</p></div>",
+      "examples": [],
+      "react": {
+        "component": "Alert",
+        "element": "div",
+        "className": "es-alert",
+        "defaults": {
+          "role": "status"
+        }
+      },
       "files": {
         "html": "molecules/alert/component.html",
         "css": "molecules/alert/component.css",
@@ -424,6 +539,13 @@
         "badge"
       ],
       "snippet": "<article class=\"es-card\">…</article>",
+      "examples": [],
+      "react": {
+        "component": "Card",
+        "element": "article",
+        "className": "es-card",
+        "defaults": {}
+      },
       "files": {
         "html": "molecules/card/component.html",
         "css": "molecules/card/component.css",
@@ -456,6 +578,13 @@
       ],
       "uses": [],
       "snippet": "<nav aria-label=\"Pagination\"><ul class=\"es-pagination\">…</ul></nav>",
+      "examples": [],
+      "react": {
+        "component": "Pagination",
+        "element": "ul",
+        "className": "es-pagination",
+        "defaults": {}
+      },
       "files": {
         "html": "molecules/pagination/component.html",
         "css": "molecules/pagination/component.css",
@@ -501,6 +630,13 @@
         "button"
       ],
       "snippet": "<section class=\"es-section es-cta\" data-surface=\"primary\">…</section>",
+      "examples": [],
+      "react": {
+        "component": "Cta",
+        "element": "section",
+        "className": "es-section es-cta",
+        "defaults": {}
+      },
       "files": {
         "html": "sections/cta/component.html",
         "css": "sections/cta/component.css",
@@ -548,6 +684,13 @@
         "button"
       ],
       "snippet": "<section class=\"es-section es-hero\" data-space=\"xl\">…</section>",
+      "examples": [],
+      "react": {
+        "component": "Hero",
+        "element": "section",
+        "className": "es-section es-hero",
+        "defaults": {}
+      },
       "files": {
         "html": "sections/hero/component.html",
         "css": "sections/hero/component.css",
@@ -584,6 +727,13 @@
         "button"
       ],
       "snippet": "<div class=\"es-page\"><header class=\"es-site-header\">…</header><main>…</main><footer class=\"es-site-footer\">…</footer></div>",
+      "examples": [],
+      "react": {
+        "component": "DefaultPage",
+        "element": "div",
+        "className": "es-page",
+        "defaults": {}
+      },
       "files": {
         "html": "layouts/default-page/component.html",
         "css": "layouts/default-page/component.css",

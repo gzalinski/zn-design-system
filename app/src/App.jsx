@@ -3,7 +3,8 @@ import {
   Search, Sun, Moon, Upload, Download, PanelRightClose, PanelRightOpen, Smartphone, Tablet, Laptop, Monitor,
   Copy, Check, ChevronRight, ChevronLeft, FileDown, Palette, Ruler, Shapes, ShieldCheck
 } from 'lucide-react';
-import { THEMES, COMPONENTS, LEVELS, FOUNDATION, VERSION, source, previewCss } from './data.js';
+import { THEMES, COMPONENTS, LEVELS, FOUNDATION, VERSION, source, previewCss, exampleHtml } from './data.js';
+import { htmlToJsx } from '../../lib/htmljsx.js';
 import { themeCss, themeColors, validateTheme, TONES, DENSITIES, RADII } from '../../lib/tokens.js';
 import { FOUNDATION_HTML } from './foundation.js';
 import Preview from './Preview.jsx';
@@ -202,6 +203,7 @@ function Single({ c, ctx }) {
   const s = source(c);
   const level = LEVELS.find((l) => l.id === c.level);
   const tabs = ['preview', 'props', 'usage', 'code', 'tokens'];
+  const width = VIEWPORTS.find((v) => v[0] === vp)[1];
   return (
     <div className="page">
       <p className="crumbs"><a href={'#/' + level.route}>{level.label}</a><ChevronRight size={14} aria-hidden="true" />{c.name}</p>
@@ -211,17 +213,17 @@ function Single({ c, ctx }) {
       <div className="tabs" role="tablist">
         {tabs.map((t) => <button key={t} role="tab" type="button" aria-selected={tab === t} onClick={() => setTab(t)}>{t[0].toUpperCase() + t.slice(1)}</button>)}
       </div>
-      {tab === 'preview' && (
-        <div className="panel">
-          <div className="panel-bar">
-            <div className="seg" role="group" aria-label="Viewport">
-              {VIEWPORTS.map(([id, w, Icon]) => <button key={id} type="button" aria-pressed={vp === id} onClick={() => setVp(id)} title={w ? w + 'px' : 'Full width'}><Icon size={16} /><span className="sr">{id}</span></button>)}
-            </div>
-            <small>{VIEWPORTS.find((v) => v[0] === vp)[1] ? VIEWPORTS.find((v) => v[0] === vp)[1] + 'px' : 'Full width'}</small>
+      {tab === 'preview' && (<>
+        <div className="vp-bar">
+          <div className="seg" role="group" aria-label="Viewport">
+            {VIEWPORTS.map(([id, w, Icon]) => <button key={id} type="button" aria-pressed={vp === id} onClick={() => setVp(id)} title={w ? w + 'px' : 'Full width'}><Icon size={16} /><span className="sr">{id}</span></button>)}
           </div>
-          <div className="stage"><Preview html={s.html} css={previewCss(c)} js={s.js} {...ctx} width={VIEWPORTS.find((v) => v[0] === vp)[1] || '100%'} pad={c.level === 'atom' || c.level === 'molecule' ? 32 : 0} title={c.name} /></div>
+          <small>{width ? width + 'px' : 'Full width'}</small>
         </div>
-      )}
+        {c.examples.length > 0
+          ? <div className="examples">{c.examples.map((e) => <Example key={e.id} e={e} c={c} ctx={ctx} width={width} />)}</div>
+          : <div className="panel"><div className="stage"><Preview html={s.html} css={previewCss(c)} js={s.js} {...ctx} width={width || '100%'} pad={c.level === 'atom' || c.level === 'molecule' ? 32 : 0} title={c.name} /></div></div>}
+      </>)}
       {tab === 'props' && (
         Object.keys(c.props).length === 0 ? <p className="empty">No props. Use the HTML as shown; the look comes from tokens.</p> : (
           <table className="table"><thead><tr><th>Prop</th><th>Attribute</th><th>Values</th><th>Default</th></tr></thead>
@@ -239,6 +241,27 @@ function Single({ c, ctx }) {
       {tab === 'code' && <CodeTabs files={[['HTML', s.html], ['CSS', s.css], ...(s.js ? [['JS', s.js]] : []), ['JSX', s.jsx]]} />}
       {tab === 'tokens' && <TokenList c={c} ctx={ctx} />}
     </div>
+  );
+}
+
+// One example: title, description, Preview / HTML / JSX.
+function Example({ e, c, ctx, width }) {
+  const [view, setView] = useState('preview');
+  const html = exampleHtml(e);
+  const anchor = c.id + '-' + e.id;
+  return (
+    <section className="example" id={anchor}>
+      <h2><a href={'#/c/' + c.id} onClick={(ev) => { ev.preventDefault(); document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' }); }} aria-hidden="true">#</a>{e.title}</h2>
+      {e.description && <p>{e.description}</p>}
+      <div className="ex-tabs" role="tablist">
+        {['preview', 'html', 'jsx'].map((v) => <button key={v} role="tab" type="button" aria-selected={view === v} onClick={() => setView(v)}>{v === 'preview' ? 'Preview' : v.toUpperCase()}</button>)}
+      </div>
+      <div className="ex-box">
+        {view === 'preview' && <div className="ex-stage"><Preview html={`<div class="ex-row">${html}</div>`} css={previewCss(c) + '.ex-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}'} {...ctx} width={width || '100%'} pad={40} title={e.title} /></div>}
+        {view === 'html' && <Code text={html} />}
+        {view === 'jsx' && <Code text={htmlToJsx(html, COMPONENTS)} />}
+      </div>
+    </section>
   );
 }
 

@@ -4,7 +4,7 @@ This repo is the source of truth. Read `catalog/index.json` first: it lists ever
 
 ## Building a page
 1. Load `tokens/dist/{theme}.css`, then `foundation/base.css`, then the `component.css` of every component you use (and of the components listed in its `uses`).
-2. Copy markup from `component.html` and set variants only through the attributes listed in `props` (`data-tone`, `data-style`, `data-size`, …).
+2. Copy markup from `component.html` or from the matching example in `examples/` (listed under `examples` in the catalog) and set variants only through the attributes listed in `props` (`data-tone`, `data-style`, `data-size`, …).
 3. Stack sections inside `<main>` with no gap. Spacing comes from `.es-section` (96 / 80 / 64px). Set the section background with `data-surface="base | soft | primary | inverse"`; text, links and the default button remap on their own.
 4. Put content in `.es-container` (`data-width="narrow | wide | full"`). Use `.es-grid` with `data-cols` or `data-context` for grids.
 
@@ -20,5 +20,6 @@ This repo is the source of truth. Read `catalog/index.json` first: it lists ever
 ## Changing the system
 - Edit only sources: `tokens/themes/*.json`, `foundation/`, `atoms|molecules|sections|layouts/*/component.{html,css,json,js}`, `lib/`.
 - Never edit generated files: `tokens/dist/`, `catalog/index.json`, `integrations/react/`. Run `npm run build`.
+- Examples: one variant group per file in `{component}/examples/{id}.html`, listed in `component.json` under `examples` (`id`, `title`, `description`). The app shows them one by one with Preview / HTML / JSX; JSX is converted by `lib/htmljsx.js`.
 - New component: create a folder with `component.html`, `component.css`, `component.json` (`id` = folder name, `status: "draft"` first). Interactive logic goes in `component.js` and is shared by HTML and React.
 - Everything in the repo is written in English.

@@ -113,5 +113,62 @@
     "defaults": {
       "type": "button"
     }
-  }
+  },
+  "examples": [
+    {
+      "id": "colors",
+      "title": "Colors",
+      "description": "Eight tones. Primary is the default; accent is for highlights, never the main action."
+    },
+    {
+      "id": "sizes",
+      "title": "Sizes",
+      "description": "sm, md (default), lg and xl. Heights follow density: 32 / 40 / 48 / 56px by default."
+    },
+    {
+      "id": "styles",
+      "title": "Fill, soft, outline, ghost",
+      "description": "data-style sets the emphasis. One fill button per section; soft, outline and ghost for the rest."
+    },
+    {
+      "id": "soft",
+      "title": "Soft buttons",
+      "description": "Tone surface with tone text. Good for secondary actions next to a fill button."
+    },
+    {
+      "id": "outline",
+      "title": "Outline buttons",
+      "description": "Page surface with a strong tone border."
+    },
+    {
+      "id": "ghost",
+      "title": "Ghost buttons",
+      "description": "No background until hover. For low-emphasis actions such as Cancel."
+    },
+    {
+      "id": "icon",
+      "title": "Button with icon",
+      "description": "Put a Lucide icon before or after the text. The icon inherits the text color."
+    },
+    {
+      "id": "icon-only",
+      "title": "Square and circle button",
+      "description": "Icon only, width equals height. Always add aria-label."
+    },
+    {
+      "id": "split",
+      "title": "Split button",
+      "description": "The icon gets its own part, separated by a line (data-split=\"line\") or a darker block (data-split=\"fill\"). Icon before or after."
+    },
+    {
+      "id": "loading",
+      "title": "Loading",
+      "description": "aria-busy=\"true\" with an es-spinner. Keeps the tone colors and blocks clicks while the action runs."
+    },
+    {
+      "id": "disabled",
+      "title": "Disabled",
+      "description": "Use disabled only when the reason is visible nearby; otherwise explain it in helper text."
+    }
+  ]
 }
