@@ -1,0 +1,50 @@
+{
+  "id": "blog-card",
+  "name": "Blog card",
+  "level": "molecule",
+  "category": "Cards",
+  "status": "draft",
+  "description": "Post teaser: rounded image, date / category meta line, title (style h5, tag h3) in the primary text tone. No border or padding; the whole card is clickable via the title link.",
+  "useWhen": [
+    "Blog or news listings (es-grid data-cols=\"3\")",
+    "Related posts under an article"
+  ],
+  "avoidWhen": [
+    "Products, listings or courses: use Listing card",
+    "A featured article with an excerpt and a button: use a section"
+  ],
+  "keywords": [
+    "blog",
+    "post",
+    "article",
+    "news",
+    "card",
+    "teaser"
+  ],
+  "props": {},
+  "tokens": [
+    "--es-radius-image",
+    "--es-meta-size",
+    "--es-h5-size",
+    "--es-primary-text",
+    "--es-text-tertiary"
+  ],
+  "uses": [],
+  "examples": [
+    {
+      "id": "grid",
+      "title": "Grid of posts",
+      "description": "Three across from 1024px, two from 768px, one on phones."
+    },
+    {
+      "id": "no-category",
+      "title": "Without category",
+      "description": "Leave out the separator and category; the date stands alone."
+    }
+  ],
+  "snippet": "<article class=\"es-blog-card\">…</article>",
+  "react": {
+    "element": "article",
+    "className": "es-blog-card"
+  }
+}

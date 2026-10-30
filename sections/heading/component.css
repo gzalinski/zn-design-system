@@ -1,0 +1,23 @@
+/* Section heading — section. One markup for every style; each style is a data-style value.
+   Style "split" (style 1, from kitkit k37): subtitle + title left, description bottom-aligned right. */
+.es-heading__grid { display: grid; gap: var(--es-space-300); }
+.es-heading__main { display: flex; flex-direction: column; align-items: flex-start; gap: var(--es-space-250); }
+.es-heading__subtitle {
+  font-size: var(--es-meta-size); line-height: 1; font-weight: var(--es-meta-weight);
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--es-text-primary);
+}
+.es-heading__title {
+  margin: 0; font-family: var(--es-font-heading); color: var(--es-text-primary);
+  font-size: var(--es-display-size); line-height: var(--es-display-leading); font-weight: var(--es-display-weight);
+  letter-spacing: -0.02em;
+}
+.es-heading__description {
+  margin: 0; max-width: var(--es-measure); color: var(--es-text-tertiary);
+  font-size: var(--es-body-lg-size); line-height: var(--es-body-lg-leading);
+}
+
+@media (min-width: 1024px) {
+  .es-heading[data-style="split"] .es-heading__grid { grid-template-columns: 1.3fr 1fr; gap: var(--es-grid-gap-2); }
+  .es-heading[data-style="split"] .es-heading__description { align-self: end; }
+  .es-heading[data-style="split"] .es-heading__grid > :only-child { grid-column: 1 / -1; }
+}

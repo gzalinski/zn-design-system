@@ -563,6 +563,66 @@
       }
     },
     {
+      "id": "blog-card",
+      "name": "Blog card",
+      "level": "molecule",
+      "category": "Cards",
+      "status": "draft",
+      "description": "Post teaser: rounded image, date / category meta line, title (style h5, tag h3) in the primary text tone. No border or padding; the whole card is clickable via the title link.",
+      "useWhen": [
+        "Blog or news listings (es-grid data-cols=\"3\")",
+        "Related posts under an article"
+      ],
+      "avoidWhen": [
+        "Products, listings or courses: use Listing card",
+        "A featured article with an excerpt and a button: use a section"
+      ],
+      "keywords": [
+        "blog",
+        "post",
+        "article",
+        "news",
+        "card",
+        "teaser"
+      ],
+      "props": {},
+      "tokens": [
+        "--es-radius-image",
+        "--es-meta-size",
+        "--es-h5-size",
+        "--es-primary-text",
+        "--es-text-tertiary"
+      ],
+      "uses": [],
+      "snippet": "<article class=\"es-blog-card\">…</article>",
+      "parts": {},
+      "examples": [
+        {
+          "id": "grid",
+          "title": "Grid of posts",
+          "description": "Three across from 1024px, two from 768px, one on phones.",
+          "file": "molecules/blog-card/examples/grid.html"
+        },
+        {
+          "id": "no-category",
+          "title": "Without category",
+          "description": "Leave out the separator and category; the date stands alone.",
+          "file": "molecules/blog-card/examples/no-category.html"
+        }
+      ],
+      "react": {
+        "component": "BlogCard",
+        "element": "article",
+        "className": "es-blog-card",
+        "defaults": {}
+      },
+      "files": {
+        "html": "molecules/blog-card/component.html",
+        "css": "molecules/blog-card/component.css",
+        "react": "integrations/react/BlogCard.jsx"
+      }
+    },
+    {
       "id": "card",
       "name": "Listing card",
       "level": "molecule",
@@ -1114,6 +1174,91 @@
         "html": "sections/cta/component.html",
         "css": "sections/cta/component.css",
         "react": "integrations/react/Cta.jsx"
+      }
+    },
+    {
+      "id": "heading",
+      "name": "Section heading",
+      "level": "section",
+      "category": "Marketing",
+      "status": "draft",
+      "description": "Section intro: uppercase subtitle and display title (style display, tag h2) on the left, a short description bottom-aligned on the right. One markup for every heading style; each style is a data-style value.",
+      "useWhen": [
+        "Opening a page section or a group of sections",
+        "Top of an inner page that needs a title and a one-line summary"
+      ],
+      "avoidWhen": [
+        "Top of a landing page with actions and media: use Hero",
+        "A heading inside a section: use es-section-header"
+      ],
+      "keywords": [
+        "heading",
+        "section heading",
+        "title",
+        "subtitle",
+        "intro",
+        "k37"
+      ],
+      "props": {
+        "variant": {
+          "attr": "data-style",
+          "values": [
+            "split"
+          ],
+          "default": "split"
+        },
+        "surface": {
+          "attr": "data-surface",
+          "values": [
+            "base",
+            "soft",
+            "primary",
+            "inverse"
+          ],
+          "default": "soft"
+        }
+      },
+      "tokens": [
+        "--es-section-space-xl",
+        "--es-display-size",
+        "--es-body-lg-size",
+        "--es-meta-size",
+        "--es-text-tertiary",
+        "--es-grid-gap-2"
+      ],
+      "uses": [],
+      "snippet": "<section class=\"es-section es-heading\" data-space=\"xl\" data-style=\"split\" data-surface=\"soft\">…</section>",
+      "parts": {},
+      "examples": [
+        {
+          "id": "split",
+          "title": "Split (style 1)",
+          "description": "Subtitle and title left, description bottom-aligned right. Stacks below 1024px.",
+          "file": "sections/heading/examples/split.html"
+        },
+        {
+          "id": "surfaces",
+          "title": "Surfaces",
+          "description": "data-surface sets the band; text remaps on its own.",
+          "file": "sections/heading/examples/surfaces.html"
+        },
+        {
+          "id": "title-only",
+          "title": "Title only",
+          "description": "Any part may be left out; a lone column spans the full width.",
+          "file": "sections/heading/examples/title-only.html"
+        }
+      ],
+      "react": {
+        "component": "Heading",
+        "element": "section",
+        "className": "es-section es-heading",
+        "defaults": {}
+      },
+      "files": {
+        "html": "sections/heading/component.html",
+        "css": "sections/heading/component.css",
+        "react": "integrations/react/Heading.jsx"
       }
     },
     {

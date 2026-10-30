@@ -1,0 +1,74 @@
+{
+  "id": "heading",
+  "name": "Section heading",
+  "level": "section",
+  "category": "Marketing",
+  "status": "draft",
+  "description": "Section intro: uppercase subtitle and display title (style display, tag h2) on the left, a short description bottom-aligned on the right. One markup for every heading style; each style is a data-style value.",
+  "useWhen": [
+    "Opening a page section or a group of sections",
+    "Top of an inner page that needs a title and a one-line summary"
+  ],
+  "avoidWhen": [
+    "Top of a landing page with actions and media: use Hero",
+    "A heading inside a section: use es-section-header"
+  ],
+  "keywords": [
+    "heading",
+    "section heading",
+    "title",
+    "subtitle",
+    "intro",
+    "k37"
+  ],
+  "props": {
+    "variant": {
+      "attr": "data-style",
+      "values": [
+        "split"
+      ],
+      "default": "split"
+    },
+    "surface": {
+      "attr": "data-surface",
+      "values": [
+        "base",
+        "soft",
+        "primary",
+        "inverse"
+      ],
+      "default": "soft"
+    }
+  },
+  "tokens": [
+    "--es-section-space-xl",
+    "--es-display-size",
+    "--es-body-lg-size",
+    "--es-meta-size",
+    "--es-text-tertiary",
+    "--es-grid-gap-2"
+  ],
+  "uses": [],
+  "examples": [
+    {
+      "id": "split",
+      "title": "Split (style 1)",
+      "description": "Subtitle and title left, description bottom-aligned right. Stacks below 1024px."
+    },
+    {
+      "id": "surfaces",
+      "title": "Surfaces",
+      "description": "data-surface sets the band; text remaps on its own."
+    },
+    {
+      "id": "title-only",
+      "title": "Title only",
+      "description": "Any part may be left out; a lone column spans the full width."
+    }
+  ],
+  "snippet": "<section class=\"es-section es-heading\" data-space=\"xl\" data-style=\"split\" data-surface=\"soft\">…</section>",
+  "react": {
+    "element": "section",
+    "className": "es-section es-heading"
+  }
+}

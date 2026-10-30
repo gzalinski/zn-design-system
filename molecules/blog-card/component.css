@@ -1,0 +1,28 @@
+/* Blog card — molecule. No border or padding. Title style h5, tag h3; the title link covers the card.
+   The category link sits above that overlay so it stays clickable. */
+.es-blog-card { position: relative; display: flex; flex-direction: column; color: var(--es-text-primary); }
+.es-blog-card__media {
+  aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--es-radius-image);
+  background: linear-gradient(135deg, var(--es-primary-surface), var(--es-secondary-surface));
+}
+.es-blog-card__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform var(--es-duration-slow) var(--es-ease-standard);
+}
+.es-blog-card:hover .es-blog-card__media img { transform: scale(1.04); }
+.es-blog-card__meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--es-space-100);
+  margin: var(--es-space-300) 0 0; color: var(--es-text-tertiary);
+  font-size: var(--es-meta-size); line-height: var(--es-meta-leading); font-weight: 600;
+  letter-spacing: 0.02em; text-transform: uppercase;
+}
+.es-blog-card__meta a { position: relative; z-index: 1; color: inherit; text-decoration: none; }
+.es-blog-card__meta a:hover { color: var(--es-primary-text); text-decoration: underline; }
+.es-blog-card__title {
+  margin: var(--es-space-150) 0 0; font-family: var(--es-font-heading); color: var(--es-primary-text);
+  font-size: var(--es-h5-size); line-height: var(--es-h5-leading); font-weight: var(--es-h5-weight);
+}
+.es-blog-card__title a { color: inherit; text-decoration: none; }
+.es-blog-card__title a::after { content: ""; position: absolute; inset: 0; }
+.es-blog-card:hover .es-blog-card__title a { text-decoration: underline; }
+@media (pointer: coarse) { .es-blog-card__meta a { padding-block: var(--es-space-150); margin-block: calc(-1 * var(--es-space-150)); } }
